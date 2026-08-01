@@ -1,0 +1,203 @@
+@import "tailwindcss";
+
+@theme inline {
+  /* Palette — French editorial system */
+  --color-marine-900: #060f2e;
+  --color-marine-800: #0a2463;
+  --color-marine-700: #0e3080;
+  --color-marine-600: #1544a8;
+  --color-marine-100: #e8ecf7;
+  --color-marine-50:  #f0f2fb;
+
+  --color-vermeil-700: #991b2a;
+  --color-vermeil-600: #c0392b;
+  --color-vermeil-500: #e63946;
+  --color-vermeil-100: #fde8ea;
+
+  --color-or-600: #a07418;
+  --color-or-500: #c4931a;
+  --color-or-400: #d4af37;
+  --color-or-100: #fdf6e3;
+
+  --color-calcaire:   #f7f8fa;
+  --color-cendre:     #edeef1;
+  --color-encre:      #12131a;
+  --color-granit:     #4b5563;
+  --color-gris-300:   #d1d5db;
+  --color-gris-200:   #e5e7eb;
+  --color-blanc:      #ffffff;
+
+  /* Semantic tokens */
+  --color-background: var(--color-blanc);
+  --color-foreground: var(--color-encre);
+  --color-muted: var(--color-calcaire);
+  --color-muted-foreground: var(--color-granit);
+  --color-border: var(--color-gris-200);
+  --color-primary: var(--color-marine-800);
+  --color-primary-foreground: var(--color-blanc);
+  --color-accent: var(--color-vermeil-500);
+  --color-accent-foreground: var(--color-blanc);
+  --color-gold: var(--color-or-500);
+  --color-ring: var(--color-marine-600);
+
+  /* Typography */
+  --font-display: var(--font-playfair);
+  --font-sans: var(--font-inter);
+  --font-mono: var(--font-mono-ibm);
+
+  /* Fluid type scale */
+  --text-display: clamp(2.5rem, 1.6rem + 4vw, 4.5rem);
+  --text-h1: clamp(2rem, 1.4rem + 2.6vw, 3.25rem);
+  --text-h2: clamp(1.5rem, 1.1rem + 1.8vw, 2.25rem);
+  --text-h3: clamp(1.15rem, 0.95rem + 0.8vw, 1.5rem);
+  --text-body-lg: 1.125rem;
+  --text-body: 1rem;
+  --text-sm: 0.875rem;
+  --text-xs: 0.75rem;
+
+  /* Radii */
+  --radius-sm: 4px;
+  --radius: 8px;
+  --radius-lg: 12px;
+  --radius-xl: 16px;
+  --radius-full: 9999px;
+
+  /* Shadows (anchored to marine) */
+  --shadow-e1: 0 1px 3px rgba(10,36,99,.06), 0 1px 2px rgba(10,36,99,.04);
+  --shadow-e2: 0 4px 12px rgba(10,36,99,.08), 0 2px 4px rgba(10,36,99,.05);
+  --shadow-e3: 0 8px 28px rgba(10,36,99,.12), 0 4px 10px rgba(10,36,99,.07);
+
+  /* Container */
+  --container-page: 1280px;
+  --container-prose: 720px;
+}
+
+@layer base {
+  *, *::before, *::after { box-sizing: border-box; }
+
+  html {
+    font-family: var(--font-sans), system-ui, sans-serif;
+    color: var(--color-foreground);
+    background: var(--color-background);
+    -webkit-font-smoothing: antialiased;
+    scroll-behavior: smooth;
+  }
+
+  body { @apply min-h-screen; }
+
+  h1, h2, h3, h4 {
+    font-family: var(--font-display), Georgia, serif;
+    letter-spacing: -0.02em;
+    line-height: 1.15;
+  }
+  h1 { font-size: var(--text-h1); font-weight: 700; }
+  h2 { font-size: var(--text-h2); font-weight: 700; }
+  h3 { font-size: var(--text-h3); font-weight: 600; }
+
+  p { line-height: 1.7; }
+
+  a { color: inherit; }
+
+  :focus-visible {
+    outline: 2px solid var(--color-ring);
+    outline-offset: 3px;
+    border-radius: var(--radius-sm);
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after {
+      animation-duration: 0.01ms !important;
+      transition-duration: 0.01ms !important;
+    }
+  }
+
+  /* Stat numerals in mono */
+  .stat-num {
+    font-family: var(--font-mono), monospace;
+    font-variant-numeric: tabular-nums;
+    letter-spacing: -0.03em;
+  }
+}
+
+@layer components {
+  .container-page {
+    max-width: var(--container-page);
+    margin-inline: auto;
+    padding-inline: 1.25rem;
+    @media (min-width: 640px) { padding-inline: 2rem; }
+    @media (min-width: 1024px) { padding-inline: 2.5rem; }
+  }
+
+  /* Tricolore accent strip */
+  .tricolore-strip {
+    height: 4px;
+    background: linear-gradient(
+      to right,
+      var(--color-marine-800) 33.33%,
+      #ffffff 33.33% 66.66%,
+      var(--color-vermeil-500) 66.66%
+    );
+  }
+
+  /* Card base */
+  .card-base {
+    background: var(--color-blanc);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow-e1);
+    transition: box-shadow 0.18s ease, transform 0.18s ease;
+  }
+  .card-base:hover {
+    box-shadow: var(--shadow-e3);
+    transform: translateY(-2px);
+  }
+
+  /* Hub pill */
+  .hub-pill {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    padding: 6px 14px;
+    border-radius: var(--radius-full);
+    background: rgba(10,36,99,.07);
+    border: 1px solid rgba(10,36,99,.12);
+    font-size: var(--text-sm);
+    color: var(--color-marine-800);
+    font-weight: 500;
+  }
+
+  /* Sector badge */
+  .sector-badge {
+    display: inline-block;
+    padding: 3px 10px;
+    border-radius: var(--radius-full);
+    background: var(--color-marine-50);
+    color: var(--color-marine-800);
+    font-size: var(--text-xs);
+    font-weight: 600;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+  }
+
+  /* Result pill */
+  .result-pill {
+    display: inline-block;
+    padding: 4px 12px;
+    border-radius: var(--radius-full);
+    background: var(--color-vermeil-100);
+    color: var(--color-vermeil-600);
+    font-size: var(--text-sm);
+    font-weight: 700;
+    font-family: var(--font-mono), monospace;
+  }
+
+  /* Ranking medal row */
+  .ranking-row {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    padding: 20px 0;
+    border-bottom: 1px solid rgba(255,255,255,.12);
+  }
+  .ranking-row:last-child { border-bottom: none; }
+}

@@ -1,0 +1,33 @@
+export const SITE = {
+  url: "https://corpshore.fr",
+  name: "Corpshore France",
+  tagline: "#1 BPO en France",
+  email: "france@corpshore.fr",
+  emailDpo: "dpo@corpshore.fr",
+  phone: undefined,
+  hq: "Toronto, Ontario, Canada",
+  globalUrl: "https://corpshore.solutions/france/",
+  oaUrl: "https://www.outsourceaccelerator.com/guide/top-bpo-companies-in-france/",
+  social: {
+    linkedin: "https://www.linkedin.com/company/corpshore",
+  },
+  rankings: {
+    france: "#1 BPO en France",
+    europe: "#2 BPO en Europe",
+    ai: "Top 5 IA mondiale",
+    source: "Outsource Accelerator 2026",
+  },
+  hubs: [
+    { code: "DO", flag: "🇩🇴", name: "Rép. Dominicaine" },
+    { code: "MX", flag: "🇲🇽", name: "Mexique" },
+    { code: "CO", flag: "🇨🇴", name: "Colombie" },
+    { code: "PL", flag: "🇵🇱", name: "Pologne" },
+    { code: "TR", flag: "🇹🇷", name: "Turquie" },
+    { code: "GH", flag: "🇬🇭", name: "Ghana" },
+    { code: "KE", flag: "🇰🇪", name: "Kenya" },
+    { code: "UG", flag: "🇺🇬", name: "Ouganda" },
+    { code: "PH", flag: "🇵🇭", name: "Philippines" },
+    { code: "VN", flag: "🇻🇳", name: "Vietnam" },
+    { code: "UZ", flag: "🇺🇿", name: "Ouzbékistan" },
+  ],
+} as const;

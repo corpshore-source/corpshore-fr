@@ -1,0 +1,255 @@
+{
+  "Meta": {
+    "defaultTitle": "Corpshore France — #1 BPO in France",
+    "defaultDescription": "Corpshore France, #1 BPO in France by Outsource Accelerator. BPO, IT, AI and HR outsourcing for French and Francophone businesses. 18 countries, 35 languages."
+  },
+  "Nav": {
+    "home": "Home",
+    "services": "Services",
+    "industries": "Sectors",
+    "about": "About",
+    "careers": "Careers",
+    "blog": "Blog",
+    "cases": "Case Studies",
+    "contact": "Contact",
+    "quote": "Get a Quote",
+    "langSwitch": "Français"
+  },
+  "Home": {
+    "hero": {
+      "badge": "🏆 #1 BPO in France — Outsource Accelerator 2026",
+      "h1": "France's #1 BPO company. Global outsourcing, Francophone expertise.",
+      "sub": "BPO, IT, AI and HR outsourced for French and Francophone businesses. 18 countries, 35 languages, 10 years of excellence.",
+      "cta1": "Request a Free Quote",
+      "cta2": "View Case Studies"
+    },
+    "trust": {
+      "countries": "countries",
+      "languages": "languages",
+      "years": "years operating",
+      "clients": "clients served",
+      "ranking": "OA #1 France 2026"
+    },
+    "why": {
+      "label": "Why Corpshore",
+      "h2": "The global standard for Francophone outsourcing.",
+      "sub": "No other BPO provider combines native Francophone expertise, global delivery infrastructure and regulatory compliance at this scale.",
+      "expertise": { "title": "Native Francophone Expertise", "body": "All French-language work is handled by native speakers. Our agents, developers and legal experts master French cultural and regulatory standards." },
+      "network": { "title": "Global Delivery Network", "body": "11 hubs across 4 continents — Americas, Europe, Africa, Asia — to choose the right hub for your budget, timezone and language requirements." },
+      "ai": { "title": "AI-Enhanced Operations", "body": "Corpshore AI deploys NLP pipelines, RPA and generative AI to reduce processing time and improve quality across all service lines." },
+      "rgpd": { "title": "GDPR & Regulatory Compliance", "body": "Full GDPR compliance, ANSSI security protocols, HDS certification for healthcare data, and AMF/ACPR compliance for financial services." },
+      "ramp": { "title": "Rapid Ramp-Up", "body": "Operational teams deployed within 4–6 weeks. Scalable from 5 to 500+ agents with no hidden fees or infrastructure lock-in." },
+      "sla": { "title": "Contractual Performance", "body": "Contractual SLAs on CSAT, AHT and QA. Monthly reports, dedicated account manager and quarterly executive business reviews." }
+    },
+    "rankings": {
+      "label": "Verified Rankings",
+      "h2": "Independently ranked. Consistently leading.",
+      "source": "Rankings sourced from outsourceaccelerator.com — the world's leading BPO directory.",
+      "r1": "#1 BPO in France",
+      "r1sub": "Outsource Accelerator 2026 — Top 30 BPO Companies in France",
+      "r2": "#2 BPO in Europe",
+      "r2sub": "Outsource Accelerator 2026 — Top 40 BPO Companies in Europe",
+      "r3": "Top 5 Global AI",
+      "r3sub": "Outsource Accelerator 2026 — AI & Automation Division"
+    },
+    "services": {
+      "label": "Service Lines",
+      "h2": "Six service lines. One partner.",
+      "bpo": { "title": "BPO Outsourcing", "body": "End-to-end back-office, data entry, document management, compliance processing and customer operations." },
+      "it": { "title": "IT & Development", "body": "Dedicated offshore dev teams, full-stack web/mobile, cloud migration, API integration and technical support." },
+      "ai": { "title": "Corpshore AI", "body": "AI automation, NLP, data labelling, chatbot development, RPA and generative AI integration for enterprise workflows." },
+      "hr": { "title": "HR Outsourcing", "body": "Talent acquisition, onboarding, payroll, Employer of Record (EOR) and French labour law compliance." },
+      "finance": { "title": "Finance & Accounting", "body": "Accounts payable/receivable, financial reporting, PCG bookkeeping, treasury support and audit preparation." },
+      "cx": { "title": "Customer Service", "body": "Multichannel French customer support — phone, email, chat, social — with contractual CSAT SLAs." }
+    },
+    "hubs": {
+      "label": "Delivery Network",
+      "h2": "11 hubs. 4 continents. One standard.",
+      "sub": "Our global delivery network lets you choose the right hub for your budget, timezone and language requirements — without sacrificing quality."
+    },
+    "cta": {
+      "h2": "Ready to scale your operations?",
+      "sub": "Talk to a Corpshore consultant today. Free quote, no obligation, response within 24 hours.",
+      "btn1": "Request a Free Quote",
+      "btn2": "Case Studies"
+    }
+  },
+  "Services": {
+    "meta": {
+      "title": "BPO, IT & AI Outsourcing Services",
+      "description": "BPO, IT, generative AI, HR outsourcing, finance and multichannel customer service. Corpshore France, #1 BPO in France."
+    },
+    "hero": {
+      "label": "Services",
+      "h1": "Six service lines. One partner for France.",
+      "sub": "Flexible contracts — from a one-off assignment to a multi-year partnership — with contractual SLAs and a dedicated account manager."
+    }
+  },
+  "Industries": {
+    "meta": {
+      "title": "Sectors — Finance, Healthcare, Public, E-commerce",
+      "description": "Sector-specific outsourcing for financial services, public sector, insurance, healthcare, e-commerce, telecoms and tourism in France."
+    },
+    "hero": {
+      "label": "Sectors",
+      "h1": "Proven sector expertise in France.",
+      "sub": "Every sector has its own regulatory constraints, cultural norms and performance indicators. Our approach adapts to your sector, not the other way around."
+    }
+  },
+  "About": {
+    "meta": {
+      "title": "About — Corpshore France",
+      "description": "The story and mission of Corpshore France: 10 years of Francophone outsourcing, 18 countries, 11 hubs and the #1 BPO in France ranking."
+    },
+    "hero": {
+      "label": "About",
+      "h1": "Built for France. Operating everywhere.",
+      "sub": "Corpshore France is not a generalist provider. We specialise in outsourcing for French and Francophone markets, with the quality standards those markets demand."
+    }
+  },
+  "Careers": {
+    "meta": {
+      "title": "Careers — Join Corpshore France",
+      "description": "15 open positions at Corpshore France — remote, IT, BPO, AI, finance. Join the #1 BPO in France."
+    },
+    "hero": {
+      "label": "Careers",
+      "h1": "Join Corpshore France.",
+      "sub": "Remote positions across our 11 global hubs. Professional development, real diversity and a mission that matters."
+    },
+    "filter": {
+      "allDepts": "All departments",
+      "allLevels": "All levels",
+      "noResults": "No positions match your criteria. Try a different combination.",
+      "applyBtn": "Apply",
+      "jobCount": "open position(s)"
+    },
+    "form": {
+      "h2": "Apply",
+      "nom": "Last name",
+      "prenom": "First name",
+      "email": "Business email",
+      "tel": "Phone",
+      "pays": "Country",
+      "poste": "Position",
+      "cv": "CV (PDF, DOC, DOCX — max 5 MB)",
+      "lettre": "Cover letter",
+      "rgpd": "I agree that my data will be processed by Corpshore France in accordance with GDPR.",
+      "submit": "Submit application",
+      "spontanee": "Speculative application"
+    }
+  },
+  "Blog": {
+    "meta": {
+      "title": "Blog & Insights — Outsourcing in France",
+      "description": "Articles, guides and analysis on BPO outsourcing, AI and the French market. Corpshore France, #1 BPO in France."
+    },
+    "hero": {
+      "label": "Blog & Insights",
+      "h1": "Analysis and guides on outsourcing in France.",
+      "sub": "In-depth articles on the French BPO market, GDPR regulation, artificial intelligence and Francophone outsourcing trends."
+    },
+    "readMore": "Read article",
+    "readTime": "min read",
+    "press": {
+      "label": "Press releases",
+      "h2": "Corpshore France news"
+    }
+  },
+  "Cases": {
+    "meta": {
+      "title": "15 Client Case Studies — Measurable Results",
+      "description": "15 case studies: CAC 40 bank, public sector, e-commerce, insurance, fintech. Corpshore #1 BPO in France — verifiable results."
+    },
+    "hero": {
+      "label": "Case Studies",
+      "h1": "15 client references. Measurable results.",
+      "sub": "From a CAC 40 bank to a regulated fintech, from the public sector to an international NGO: our results are verifiable and our commitments contractual. Client names anonymised (NDA)."
+    },
+    "metrics": {
+      "csat": "CSAT +22%",
+      "csatLabel": "CAC 40 Bank",
+      "delay": "−62% delay",
+      "delayLabel": "SaaS resolution",
+      "onboarding": "5d → 8h",
+      "onboardingLabel": "Fintech onboarding",
+      "savings": "€1.1M",
+      "savingsLabel": "Telecom savings/yr",
+      "capacity": "+270%",
+      "capacityLabel": "Retail capacity"
+    },
+    "readCase": "Read case"
+  },
+  "Contact": {
+    "meta": {
+      "title": "Contact — france@corpshore.fr",
+      "description": "Contact Corpshore France for a BPO, IT or AI quote. Response within 24h. #1 BPO in France by Outsource Accelerator."
+    },
+    "hero": {
+      "label": "Contact",
+      "h1": "Contact Corpshore France.",
+      "sub": "A consultant will respond within 24 business hours to analyse your needs and propose a tailored outsourcing solution."
+    },
+    "form": {
+      "nom": "Last name",
+      "prenom": "First name",
+      "societe": "Company",
+      "email": "Business email",
+      "tel": "Phone",
+      "pays": "Country",
+      "service": "Service required",
+      "message": "Message",
+      "rgpd": "I agree that my data will be processed by Corpshore France in accordance with GDPR.",
+      "submit": "Send request",
+      "required": "Required fields"
+    },
+    "info": {
+      "emailLabel": "France email",
+      "siteLabel": "Global website",
+      "hqLabel": "Headquarters (HQ)",
+      "rankingLabel": "Verified ranking",
+      "replyTime": "Reply guaranteed within 24 business hours"
+    },
+    "services": {
+      "bpo": "BPO Outsourcing",
+      "it": "IT / Development Outsourcing",
+      "ai": "AI Outsourcing (Corpshore AI)",
+      "hr": "HR Outsourcing",
+      "finance": "Finance & Accounting",
+      "cx": "Multichannel Customer Service",
+      "other": "Other / Not sure yet"
+    }
+  },
+  "Legal": {
+    "meta": {
+      "title": "Legal notices & GDPR Policy",
+      "description": "Legal notices, GDPR and cookie policy for Corpshore France (corpshore.fr). LCEN compliance."
+    },
+    "hero": {
+      "label": "Legal",
+      "h1": "Legal notices."
+    },
+    "updated": "Last updated:"
+  },
+  "Footer": {
+    "tagline": "Ranked #1 BPO in France by Outsource Accelerator.",
+    "services": "Services",
+    "company": "Company",
+    "legal": "Legal",
+    "copyright": "© 2026 Corpshore Solutions Corporation. All rights reserved.",
+    "links": {
+      "bpo": "BPO",
+      "it": "IT Outsourcing",
+      "ai": "Corpshore AI",
+      "finance": "Finance & Accounting",
+      "about": "About",
+      "cases": "Case Studies",
+      "blog": "Blog",
+      "careers": "Careers",
+      "global": "Corpshore Global",
+      "legal": "Legal notices",
+      "rgpd": "Privacy policy",
+      "contact": "Contact"
+    }
+  }
+}
