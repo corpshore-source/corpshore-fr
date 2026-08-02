@@ -6,6 +6,7 @@ import { LocaleSwitcher } from "./locale-switcher";
 import { buttonVariants } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
 import { Menu, X } from "lucide-react";
+import Image from "next/image";
 
 export function SiteHeader() {
   const t = useTranslations("Nav");
@@ -45,17 +46,8 @@ export function SiteHeader() {
         <div className="container-page">
           <nav className="flex items-center h-16 gap-4" aria-label="Navigation principale">
             {/* Logo */}
-            <Link href="/" className="flex items-center gap-2.5 mr-4 shrink-0">
-              <div className="w-8 h-8 bg-[var(--color-marine-800)] rounded-[var(--radius-sm)] flex items-center justify-center">
-                <svg viewBox="0 0 24 24" className="w-5 h-5">
-                  <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"
-                    stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" fill="none" />
-                </svg>
-              </div>
-              <span className="font-semibold text-[var(--color-encre)] text-sm leading-tight">
-                Corpshore<br />
-                <span className="text-[var(--color-marine-800)] font-bold">France</span>
-              </span>
+            <Link href="/" className="flex items-center gap-2 mr-4 shrink-0">
+              <Image src="/images/logo.png" alt="Corpshore France" width={140} height={40} className="h-9 w-auto" priority />
             </Link>
 
             {/* Desktop nav */}

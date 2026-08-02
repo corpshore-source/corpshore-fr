@@ -39,6 +39,7 @@ function AboutContent() {
         label={t("hero.label")}
         heading={t("hero.h1")}
         sub={t("hero.sub")}
+        image="/images/equipe-teletravail-francophonie.webp"
       />
 
       {/* Story */}

@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { setRequestLocale, getTranslations } from "next-intl/server";
 import { useTranslations } from "next-intl";
+import Image from "next/image";
 import { Container, Section, Eyebrow } from "@/components/ui/container";
 import { PageHero } from "@/components/layout/page-hero";
 import { blogPosts } from "@/lib/data/blog";
@@ -33,10 +34,13 @@ function BlogContent({ locale }: { locale: AppLocale }) {
             <h2>{isFr ? "15 articles sur l'externalisation en France" : "15 articles on outsourcing in France"}</h2>
           </div>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-            {blogPosts.map((post) => (
+            {blogPosts.map((post, idx) => {
+              const imgs = ["hero-paris-operations","paris-la-defense-business","equipe-teletravail-francophonie","ai-annotation-equipe","secteur-public-digitalisation","agent-support-francophone","histoire-lumieres-tech","corpshore-global-map","recrutement-teletravail-france","badge-oa-france-2026"];
+              const imgSrc = `/images/${imgs[idx % imgs.length]}.webp`;
+              return (
               <article key={post.id} className="card-base flex flex-col overflow-hidden">
-                <div className="bg-[var(--color-calcaire)] h-44 flex items-center justify-center text-5xl border-b border-[var(--color-border)]">
-                  📰
+                <div className="relative h-44 overflow-hidden bg-[var(--color-calcaire)]">
+                  <Image src={imgSrc} alt="" fill className="object-cover" />
                 </div>
                 <div className="p-5 flex flex-col flex-1">
                   <div className="flex items-center gap-2 mb-3">
@@ -63,7 +67,8 @@ function BlogContent({ locale }: { locale: AppLocale }) {
                   </div>
                 </div>
               </article>
-            ))}
+              );
+            })}
           </div>
         </Container>
       </Section>

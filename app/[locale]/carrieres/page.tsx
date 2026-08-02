@@ -38,6 +38,7 @@ export default function CarriersPage() {
         label={t("hero.label")}
         heading={t("hero.h1")}
         sub={t("hero.sub")}
+        image="/images/recrutement-teletravail-france.webp"
       >
         <div className="flex flex-wrap gap-3">
           <span className="inline-flex items-center gap-1.5 text-sm bg-white/10 border border-white/20 text-white px-3 py-1.5 rounded-full">

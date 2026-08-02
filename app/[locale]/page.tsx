@@ -37,8 +37,9 @@ function HomeContent() {
   return (
     <>
       {/* Hero */}
-      <section className="bg-[var(--color-marine-800)] text-white pt-24 pb-20 md:pt-32 md:pb-28">
-        <Container>
+      <section className="relative bg-[var(--color-marine-800)] text-white pt-24 pb-20 md:pt-32 md:pb-28 overflow-hidden">
+        <Image src="/images/hero-paris-operations.webp" alt="" fill className="object-cover opacity-20 mix-blend-luminosity" priority aria-hidden="true" />
+        <Container className="relative z-10">
           <div className="max-w-3xl">
             <div className="inline-flex items-center gap-2 text-sm font-semibold bg-[var(--color-or-500)]/20 border border-[var(--color-or-500)]/30 text-[var(--color-or-400)] px-4 py-1.5 rounded-[var(--radius-full)] mb-6">
               {t("hero.badge")}
