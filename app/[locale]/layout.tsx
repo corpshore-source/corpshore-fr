@@ -37,22 +37,25 @@ export function generateStaticParams() {
 export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }): Promise<Metadata> {
   const { locale } = await params;
   const t = await getTranslations({ locale, namespace: "Meta" });
+  const ogLocale = locale === "fr" ? "fr_FR" : "en_US";
   return {
     metadataBase: new URL(SITE.url),
     title: { template: t("titleTemplate"), default: t("defaultTitle") },
     description: t("defaultDescription"),
     openGraph: {
       siteName: t("siteName"),
-      locale,
+      locale: ogLocale,
       type: "website",
     },
-    alternates: {
-      canonical: "/",
-      languages: {
-        fr: `${SITE.url}/fr`,
-        en: `${SITE.url}/en`,
-        "x-default": `${SITE.url}/fr`,
-      },
+    twitter: {
+      card: "summary_large_image",
+      site: "@corpshore",
+    },
+    other: {
+      "geo.region": "FR",
+      "geo.placename": "Paris, France",
+      "geo.position": "48.8566;2.3522",
+      ICBM: "48.8566, 2.3522",
     },
   };
 }
@@ -71,6 +74,38 @@ export default async function LocaleLayout({
   const messages = await getMessages();
   const meta = localeMeta[locale as keyof typeof localeMeta];
 
+  const jsonLd = {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "Organization",
+        "@id": `${SITE.url}/#organization`,
+        name: "Corpshore France",
+        url: SITE.url,
+        contactPoint: {
+          "@type": "ContactPoint",
+          email: SITE.email,
+          contactType: "customer service",
+          areaServed: "FR",
+          availableLanguage: ["French", "English"],
+        },
+        address: { "@type": "PostalAddress", addressCountry: "FR" },
+        sameAs: [SITE.social.linkedin, SITE.globalUrl],
+        description:
+          "Corpshore France, #1 BPO en France. Externalisation BPO, infogérance IT et IA générative pour les entreprises françaises et francophones.",
+        knowsAbout: ["Business Process Outsourcing", "IT Outsourcing", "Artificial Intelligence", "Managed Services"],
+      },
+      {
+        "@type": "WebSite",
+        "@id": `${SITE.url}/#website`,
+        url: SITE.url,
+        name: "Corpshore France",
+        inLanguage: ["fr-FR", "en"],
+        publisher: { "@id": `${SITE.url}/#organization` },
+      },
+    ],
+  };
+
   return (
     <html
       lang={meta.hreflang}
@@ -79,6 +114,10 @@ export default async function LocaleLayout({
       suppressHydrationWarning
     >
       <body className="min-h-screen flex flex-col">
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+        />
         <NextIntlClientProvider messages={messages}>
           <a
             href="#main"

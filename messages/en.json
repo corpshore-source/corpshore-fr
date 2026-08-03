@@ -1,7 +1,9 @@
 {
   "Meta": {
-    "defaultTitle": "Corpshore France: #1 BPO in France",
-    "defaultDescription": "Corpshore France, #1 BPO in France by Outsource Accelerator. BPO, IT, AI and HR outsourcing for French and Francophone businesses. 18 countries, 35 languages."
+    "siteName": "Corpshore France",
+    "titleTemplate": "%s · Corpshore France",
+    "defaultTitle": "Corpshore France: #1 BPO, IT & AI Outsourcing in France",
+    "defaultDescription": "Corpshore France, #1 BPO in France by Outsource Accelerator. BPO, IT outsourcing and AI delivery for French and Francophone businesses. 18 countries, 35 languages."
   },
   "Nav": {
     "home": "Home",
@@ -76,8 +78,8 @@
   },
   "Services": {
     "meta": {
-      "title": "BPO, IT & AI Outsourcing Services",
-      "description": "BPO, IT, generative AI, HR outsourcing, finance and multichannel customer service. Corpshore France, #1 BPO in France."
+      "title": "BPO, IT & AI Outsourcing Services in France",
+      "description": "BPO outsourcing, IT managed services, generative AI delivery, HR outsourcing, finance and multichannel customer service in French. Corpshore France, #1 BPO in France."
     },
     "hero": {
       "label": "Services",
@@ -141,8 +143,8 @@
   },
   "Blog": {
     "meta": {
-      "title": "Blog & Insights — Outsourcing in France",
-      "description": "Articles, guides and analysis on BPO outsourcing, AI and the French market. Corpshore France, #1 BPO in France."
+      "title": "Blog & Insights — BPO, IT & AI Outsourcing in France",
+      "description": "Articles, guides and analysis on BPO outsourcing, IT managed services, generative AI and the French market. Corpshore France, #1 BPO in France."
     },
     "hero": {
       "label": "Blog & Insights",
@@ -182,8 +184,8 @@
   },
   "Contact": {
     "meta": {
-      "title": "Contact — france@corpshore.fr",
-      "description": "Contact Corpshore France for a BPO, IT or AI quote. Response within 24h. #1 BPO in France by Outsource Accelerator."
+      "title": "BPO, IT & AI Outsourcing Quote — Contact Corpshore France",
+      "description": "Request a BPO, IT outsourcing or AI delivery quote. Response within 24h. Corpshore France, #1 BPO in France by Outsource Accelerator."
     },
     "hero": {
       "label": "Contact",

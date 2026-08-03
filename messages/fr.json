@@ -2,8 +2,8 @@
   "Meta": {
     "siteName": "Corpshore France",
     "titleTemplate": "%s · Corpshore France",
-    "defaultTitle": "Corpshore France : #1 BPO en France",
-    "defaultDescription": "Corpshore France, #1 BPO en France par Outsource Accelerator. Externalisation BPO, IT, IA et RH pour les entreprises françaises et francophones. 18 pays, 35 langues."
+    "defaultTitle": "Corpshore France : #1 BPO, IT & IA en France",
+    "defaultDescription": "Corpshore France, #1 BPO en France par Outsource Accelerator. Externalisation BPO, infogérance IT et IA générative pour les entreprises françaises et francophones. 18 pays, 35 langues."
   },
   "Nav": {
     "home": "Accueil",
@@ -78,8 +78,8 @@
   },
   "Services": {
     "meta": {
-      "title": "Services d'Externalisation BPO, IT & IA",
-      "description": "BPO, IT, IA générative, RH externalisée, finance et service client multicanal. Corpshore France, #1 BPO en France."
+      "title": "Externalisation BPO, IT & IA en France",
+      "description": "Externalisation BPO, infogérance IT, IA générative, RH externalisée, finance et service client multicanal en français. Corpshore France, #1 BPO en France."
     },
     "hero": {
       "label": "Services",
@@ -143,8 +143,8 @@
   },
   "Blog": {
     "meta": {
-      "title": "Blog & Insights — Externalisation en France",
-      "description": "Articles, guides et analyses sur l'externalisation BPO, l'IA et le marché français. Corpshore France, #1 BPO en France."
+      "title": "Blog & Insights — BPO, IT & IA en France",
+      "description": "Articles, guides et analyses sur l'externalisation BPO, l'infogérance IT, l'IA générative et le marché français. Corpshore France, #1 BPO en France."
     },
     "hero": {
       "label": "Blog & Insights",
@@ -184,8 +184,8 @@
   },
   "Contact": {
     "meta": {
-      "title": "Contact — france@corpshore.fr",
-      "description": "Contactez Corpshore France pour un devis BPO, IT ou IA. Réponse sous 24h. #1 BPO en France par Outsource Accelerator."
+      "title": "Devis BPO, IT & IA — Contacter Corpshore France",
+      "description": "Demandez un devis externalisation BPO, infogérance IT ou IA générative. Réponse sous 24h. Corpshore France, #1 BPO en France par Outsource Accelerator."
     },
     "hero": {
       "label": "Contact",

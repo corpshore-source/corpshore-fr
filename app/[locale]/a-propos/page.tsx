@@ -9,10 +9,20 @@ import { CtaBanner } from "@/components/marketing/cta-banner";
 import Image from "next/image";
 import { SITE } from "@/lib/site";
 
+import { pageAlternates, KEYWORDS } from "@/lib/seo";
+
 export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }): Promise<Metadata> {
   const { locale } = await params;
   const t = await getTranslations({ locale, namespace: "About.meta" });
-  return { title: t("title"), description: t("description") };
+  const title = t("title");
+  const description = t("description");
+  return {
+    title,
+    description,
+    keywords: KEYWORDS.about[locale as "fr" | "en"],
+    alternates: pageAlternates("/a-propos"),
+    openGraph: { title, description, url: `${SITE.url}/${locale}/a-propos` },
+  };
 }
 
 const timeline = [

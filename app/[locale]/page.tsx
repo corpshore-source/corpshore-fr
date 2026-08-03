@@ -8,11 +8,20 @@ import { buttonVariants } from "@/components/ui/button";
 import { TrustBar } from "@/components/marketing/trust-bar";
 import { CtaBanner } from "@/components/marketing/cta-banner";
 import { SITE } from "@/lib/site";
+import { pageAlternates, KEYWORDS } from "@/lib/seo";
 
 export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }): Promise<Metadata> {
   const { locale } = await params;
   const t = await getTranslations({ locale, namespace: "Meta" });
-  return { title: t("defaultTitle"), description: t("defaultDescription") };
+  const title = t("defaultTitle");
+  const description = t("defaultDescription");
+  return {
+    title,
+    description,
+    keywords: KEYWORDS.home[locale as "fr" | "en"],
+    alternates: pageAlternates("/"),
+    openGraph: { title, description, url: `${SITE.url}/${locale}` },
+  };
 }
 
 function HomeContent() {

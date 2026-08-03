@@ -7,10 +7,21 @@ import { buttonVariants } from "@/components/ui/button";
 import { PageHero } from "@/components/layout/page-hero";
 import { CtaBanner } from "@/components/marketing/cta-banner";
 
+import { SITE } from "@/lib/site";
+import { pageAlternates, KEYWORDS } from "@/lib/seo";
+
 export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }): Promise<Metadata> {
   const { locale } = await params;
   const t = await getTranslations({ locale, namespace: "Industries.meta" });
-  return { title: t("title"), description: t("description") };
+  const title = t("title");
+  const description = t("description");
+  return {
+    title,
+    description,
+    keywords: KEYWORDS.industries[locale as "fr" | "en"],
+    alternates: pageAlternates("/industries"),
+    openGraph: { title, description, url: `${SITE.url}/${locale}/industries` },
+  };
 }
 
 const sectors = [

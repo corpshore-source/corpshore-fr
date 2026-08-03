@@ -7,10 +7,21 @@ import { CtaBanner } from "@/components/marketing/cta-banner";
 import { caseStudies } from "@/lib/data/cases";
 import type { AppLocale } from "@/i18n/routing";
 
+import { SITE } from "@/lib/site";
+import { pageAlternates, KEYWORDS } from "@/lib/seo";
+
 export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }): Promise<Metadata> {
   const { locale } = await params;
   const t = await getTranslations({ locale, namespace: "Cases.meta" });
-  return { title: t("title"), description: t("description") };
+  const title = t("title");
+  const description = t("description");
+  return {
+    title,
+    description,
+    keywords: KEYWORDS.cases[locale as "fr" | "en"],
+    alternates: pageAlternates("/etudes-de-cas"),
+    openGraph: { title, description, url: `${SITE.url}/${locale}/etudes-de-cas` },
+  };
 }
 
 function CasesContent({ locale }: { locale: AppLocale }) {

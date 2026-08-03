@@ -5,10 +5,19 @@ import { Container, Section } from "@/components/ui/container";
 import { PageHero } from "@/components/layout/page-hero";
 import { SITE } from "@/lib/site";
 
+import { pageAlternates } from "@/lib/seo";
+
 export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }): Promise<Metadata> {
   const { locale } = await params;
   const t = await getTranslations({ locale, namespace: "Legal.meta" });
-  return { title: t("title"), description: t("description") };
+  const title = t("title");
+  const description = t("description");
+  return {
+    title,
+    description,
+    robots: { index: false, follow: true },
+    alternates: pageAlternates("/mentions-legales"),
+  };
 }
 
 function LegalContent() {

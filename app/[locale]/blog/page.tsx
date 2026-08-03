@@ -8,10 +8,21 @@ import { blogPosts } from "@/lib/data/blog";
 import { pressReleases } from "@/lib/data/press";
 import type { AppLocale } from "@/i18n/routing";
 
+import { SITE } from "@/lib/site";
+import { pageAlternates, KEYWORDS } from "@/lib/seo";
+
 export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }): Promise<Metadata> {
   const { locale } = await params;
   const t = await getTranslations({ locale, namespace: "Blog.meta" });
-  return { title: t("title"), description: t("description") };
+  const title = t("title");
+  const description = t("description");
+  return {
+    title,
+    description,
+    keywords: KEYWORDS.blog[locale as "fr" | "en"],
+    alternates: pageAlternates("/blog"),
+    openGraph: { title, description, url: `${SITE.url}/${locale}/blog` },
+  };
 }
 
 function BlogContent({ locale }: { locale: AppLocale }) {
