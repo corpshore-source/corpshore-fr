@@ -132,15 +132,15 @@ function HomeContent() {
       <Section tone="marine">
         <Container>
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-            {/* Left: OA badge image */}
+            {/* Left: Paris business image */}
             <div className="relative h-64 lg:h-80 rounded-2xl overflow-hidden ring-1 ring-white/10 shadow-xl order-2 lg:order-1">
               <Image
-                src="/images/badge-oa-france-2026.webp"
-                alt="Outsource Accelerator #1 BPO France 2026"
+                src="/images/paris-la-defense-business.webp"
+                alt="Corpshore France — opérations Paris"
                 fill
                 className="object-cover"
               />
-              <div className="absolute inset-0 bg-[var(--color-marine-800)]/20" />
+              <div className="absolute inset-0 bg-[var(--color-marine-800)]/30" />
               <div className="absolute bottom-4 left-4 right-4">
                 <div className="inline-flex items-center gap-2 bg-white/10 border border-white/20 backdrop-blur-sm rounded-lg px-4 py-2 text-sm text-white font-semibold">
                   <span>🏆</span>
@@ -155,17 +155,18 @@ function HomeContent() {
               <h2 className="text-white mb-8">{t("rankings.h2")}</h2>
               <div className="bg-white/5 border border-white/10 rounded-[var(--radius-xl)] p-6">
                 {[
-                  { medal: "🥇", title: t("rankings.r1"), sub: t("rankings.r1sub") },
-                  { medal: "🥈", title: t("rankings.r2"), sub: t("rankings.r2sub") },
-                  { medal: "🤖", title: t("rankings.r3"), sub: t("rankings.r3sub") },
-                ].map(({ medal, title, sub }) => (
-                  <div key={title} className="ranking-row">
+                  { medal: "🥇", title: t("rankings.r1"), sub: t("rankings.r1sub"), href: SITE.oaUrl },
+                  { medal: "🥈", title: t("rankings.r2"), sub: t("rankings.r2sub"), href: SITE.oaEuropeUrl },
+                  { medal: "🤖", title: t("rankings.r3"), sub: t("rankings.r3sub"), href: SITE.oaAiUrl },
+                ].map(({ medal, title, sub, href }) => (
+                  <a key={title} href={href} target="_blank" rel="noopener noreferrer" className="ranking-row group hover:bg-white/5 rounded-lg transition-colors -mx-2 px-2">
                     <span className="text-3xl">{medal}</span>
-                    <div>
-                      <p className="font-semibold text-white text-lg">{title}</p>
+                    <div className="flex-1">
+                      <p className="font-semibold text-white text-lg group-hover:underline">{title}</p>
                       <p className="text-sm text-white/55">{sub}</p>
                     </div>
-                  </div>
+                    <span className="text-white/30 text-sm group-hover:text-white/60 transition-colors">↗</span>
+                  </a>
                 ))}
               </div>
               <p className="mt-6 text-sm text-white/40">

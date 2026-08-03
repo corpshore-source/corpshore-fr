@@ -35,7 +35,7 @@ function BlogContent({ locale }: { locale: AppLocale }) {
           </div>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
             {blogPosts.map((post, idx) => {
-              const imgs = ["hero-paris-operations","paris-la-defense-business","equipe-teletravail-francophonie","ai-annotation-equipe","secteur-public-digitalisation","agent-support-francophone","histoire-lumieres-tech","corpshore-global-map","recrutement-teletravail-france","badge-oa-france-2026"];
+              const imgs = ["hero-paris-operations","paris-la-defense-business","equipe-teletravail-francophonie","ai-annotation-equipe","secteur-public-digitalisation","agent-support-francophone","histoire-lumieres-tech","corpshore-global-map","recrutement-teletravail-france"];
               const imgSrc = `/images/${imgs[idx % imgs.length]}.webp`;
               return (
               <article key={post.id} className="card-base flex flex-col overflow-hidden">
