@@ -2,6 +2,7 @@
 import { useState } from "react";
 import { Link } from "@/i18n/navigation";
 import { useLocale } from "next-intl";
+import { trackTool } from "@/lib/tool-tracker";
 
 const QUESTIONS_FR = [
   { dim: "Processus", q: "Vos processus principaux sont-ils documentés (procédures, scripts, modes opératoires) ?" },
@@ -166,7 +167,18 @@ export function ReadinessQuiz() {
 
       <div className="mt-8 text-center">
         <button
-          onClick={() => setSubmitted(true)}
+          onClick={() => {
+            const dimScores = dims.map((dim, di) => {
+              const dimAnswers = answers.slice(di * 2, di * 2 + 2);
+              return `${dim}: ${dimAnswers.filter(a => a === true).length}/2`;
+            });
+            trackTool("readiness_quiz", {
+              "Score": `${score}/8`,
+              "Niveau": tiers[tier].label,
+              "Dimensions": dimScores.join(" | "),
+            });
+            setSubmitted(true);
+          }}
           disabled={answered < 8}
           className="px-10 py-4 bg-[var(--color-marine-800)] text-white rounded-full font-semibold text-sm hover:bg-[var(--color-marine-700)] transition-colors disabled:opacity-40 disabled:cursor-not-allowed"
         >

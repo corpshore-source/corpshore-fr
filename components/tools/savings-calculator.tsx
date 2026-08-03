@@ -1,7 +1,8 @@
 "use client";
-import { useState, useMemo } from "react";
+import { useState, useMemo, useEffect } from "react";
 import { Link } from "@/i18n/navigation";
 import { useLocale } from "next-intl";
+import { trackTool } from "@/lib/tool-tracker";
 
 const ROLES = [
   { fr: "Support client (T1)",       en: "Customer support (T1)",      rate: 11 },
@@ -36,6 +37,19 @@ export function SavingsCalculator() {
     const onboarding = corpshoreCost * 2.5;
     return Math.ceil(onboarding / saving);
   }, [saving, corpshoreCost]);
+
+  useEffect(() => {
+    trackTool("savings_calculator", {
+      "Type de poste": role.fr,
+      "Effectif externalisé": `${teamSize} FTE`,
+      "Coût horaire France": `${franceRate} €/h`,
+      "Économies mensuelles": fmt(saving),
+      "Réduction de coût": `${pct}%`,
+      "Coût Corpshore mensuel": fmt(corpshoreCost),
+      "Délai de ROI": `${roiMonths} mois`,
+      "Économies annuelles": fmt(annual),
+    });
+  }, [roleIdx, teamSize, franceRate, saving, pct, corpshoreCost, roiMonths, annual, role.fr]);
 
   return (
     <div className="grid grid-cols-1 lg:grid-cols-5 gap-8 items-stretch">

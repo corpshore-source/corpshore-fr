@@ -6,6 +6,7 @@ import { Container, Section, Eyebrow } from "@/components/ui/container";
 import { PageHero } from "@/components/layout/page-hero";
 import { RgpdChecker } from "@/components/tools/rgpd-checker";
 import { SITE } from "@/lib/site";
+import { getToolInsights, clearToolInsights } from "@/lib/tool-tracker";
 
 const TURNSTILE_SITE_KEY = "0x4AAAAAAEFhVlYr9OXOOWyC";
 const CALENDLY_URL = "https://calendly.com/corpshoresolutions/book-a-discovery-call-meeting-with-corpshore-solutions";
@@ -22,7 +23,9 @@ export default function ContactPage() {
     e.preventDefault();
     setStatus("sending");
     const form = e.currentTarget;
-    const data = Object.fromEntries(new FormData(form));
+    const formData = Object.fromEntries(new FormData(form));
+    const toolInsights = getToolInsights();
+    const data = toolInsights ? { ...formData, tool_insights: toolInsights } : formData;
 
     try {
       const res = await fetch("/api/contact", {
@@ -31,6 +34,7 @@ export default function ContactPage() {
         body: JSON.stringify(data),
       });
       if (res.ok) {
+        clearToolInsights();
         setStatus("sent");
         form.reset();
         if (typeof window !== "undefined" && (window as any).turnstile) {

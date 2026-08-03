@@ -1,6 +1,7 @@
 "use client";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { useLocale } from "next-intl";
+import { trackTool } from "@/lib/tool-tracker";
 
 const DATA_FR = {
   columns: ["Interne France", "Corpshore Afrique", "Offshore Asie générique"],
@@ -107,6 +108,12 @@ export function ModelComparator() {
   const [highlighted, setHighlighted] = useState<number>(1);
 
   const CORP_IDX = 1;
+
+  useEffect(() => {
+    trackTool("model_comparator", {
+      "Modèle sélectionné": DATA_FR.columns[highlighted],
+    });
+  }, [highlighted]);
 
   return (
     <div>

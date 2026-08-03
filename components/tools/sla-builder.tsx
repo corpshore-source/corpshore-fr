@@ -1,7 +1,8 @@
 "use client";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { Link } from "@/i18n/navigation";
 import { useLocale } from "next-intl";
+import { trackTool } from "@/lib/tool-tracker";
 
 type Channel = "voice" | "chat" | "backoffice" | "multilingual";
 type Coverage = "bureau" | "extended" | "full247";
@@ -83,6 +84,28 @@ export function SlaBuilder() {
   const STEP_LABELS = isFr
     ? ["1. Canaux", "2. Couverture", "3. SLA"]
     : ["1. Channels", "2. Coverage", "3. SLA"];
+
+  const channelKey = Array.from(selectedChannels).sort().join(",");
+
+  useEffect(() => {
+    if (step !== 3) return;
+    const chKeys = channelKey.split(",").filter(Boolean);
+    const chLabels = chKeys.map(k => CHANNELS_FR.find(c => c.key === k)?.label ?? k).join(", ");
+    const covLabel = COVERAGE_FR.find(c => c.key === coverage)?.label ?? coverage;
+    const slaLabel = SLA_FR.find(s => s.key === slaLevel)?.label ?? slaLevel;
+    const ts =
+      CHANNELS_FR.filter(c => chKeys.includes(c.key)).reduce((s, c) => s + c.score, 0) +
+      (COVERAGE_FR.find(c => c.key === coverage)?.score ?? 0) +
+      (SLA_FR.find(s => s.key === slaLevel)?.score ?? 0);
+    const t = TIERS.find(t => ts >= t.min && ts <= t.max) ?? TIERS[0];
+    trackTool("sla_builder", {
+      "Canaux": chLabels || "—",
+      "Couverture": covLabel,
+      "Niveau SLA": slaLabel,
+      "Tier recommandé": t.name,
+      "Fourchette tarifaire": t.range,
+    });
+  }, [step, channelKey, coverage, slaLevel]);
 
   return (
     <div className="max-w-3xl mx-auto">

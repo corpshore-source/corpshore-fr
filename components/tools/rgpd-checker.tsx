@@ -2,6 +2,7 @@
 import { useState } from "react";
 import { Link } from "@/i18n/navigation";
 import { useLocale } from "next-intl";
+import { trackTool } from "@/lib/tool-tracker";
 
 const QUESTIONS_FR = [
   {
@@ -129,7 +130,19 @@ export function RgpdChecker() {
 
       <div className="mt-6 flex justify-center">
         <button
-          onClick={() => setShowResult(true)}
+          onClick={() => {
+            const failedList = failedIdxs
+              .map(i => QUESTIONS_FR[i].risk)
+              .join("; ");
+            const levelLabel = { danger: "Risques élevés", warning: "À améliorer", ok: "Conforme" }[level];
+            const entry: Record<string, string> = {
+              "Score": `${score}/6`,
+              "Niveau RGPD": levelLabel,
+            };
+            if (failedList) entry["Points à corriger"] = failedList;
+            trackTool("rgpd_checker", entry);
+            setShowResult(true);
+          }}
           disabled={answered < 6}
           className="px-10 py-4 bg-[var(--color-marine-800)] text-white rounded-full font-semibold text-sm hover:bg-[var(--color-marine-700)] transition-colors disabled:opacity-40 disabled:cursor-not-allowed"
         >

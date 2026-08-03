@@ -1,7 +1,8 @@
 "use client";
-import { useState, useMemo } from "react";
+import { useState, useMemo, useEffect } from "react";
 import { Link } from "@/i18n/navigation";
 import { useLocale } from "next-intl";
+import { trackTool } from "@/lib/tool-tracker";
 
 const ROLES = [
   { fr: "Support client / Centre de contacts", en: "Customer support / Contact centre", rate: 11 },
@@ -51,6 +52,18 @@ export function WorkforcePlanner() {
 
     return { agents, monthlyCost, inHouseCost, saving, savingPct, monthlyHours };
   }, [volume, aht, targetRate, hoursIdx, roleIdx]);
+
+  useEffect(() => {
+    trackTool("workforce_planner", {
+      "Activité": ROLES[roleIdx].fr,
+      "Volume mensuel": `${volume.toLocaleString("fr-FR")} contacts`,
+      "DMT": `${aht} min`,
+      "Couverture": HOURS_OPTIONS[hoursIdx].fr,
+      "Effectif calculé": `${result.agents} agents`,
+      "Coût Corpshore mensuel": fmt(result.monthlyCost),
+      "vs. France interne": `${fmt(result.inHouseCost)} (économie ${result.savingPct}%)`,
+    });
+  }, [roleIdx, volume, aht, hoursIdx, result]);
 
   return (
     <div className="grid grid-cols-1 lg:grid-cols-5 gap-8">

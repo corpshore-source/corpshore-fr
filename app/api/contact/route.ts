@@ -57,7 +57,7 @@ async function subscribeToZohoCampaigns(
 async function createZohoCRMLead(
   accessToken: string,
   data: Record<string, string>
-): Promise<void> {
+): Promise<string | null> {
   const body = {
     data: [
       {
@@ -73,13 +73,39 @@ async function createZohoCRMLead(
     ],
   };
 
-  await fetch("https://www.zohoapis.com/crm/v7/Leads", {
+  const res = await fetch("https://www.zohoapis.com/crm/v7/Leads", {
     method: "POST",
     headers: {
       Authorization: `Zoho-oauthtoken ${accessToken}`,
       "Content-Type": "application/json",
     },
     body: JSON.stringify(body),
+  });
+  const result = await res.json();
+  return (result?.data?.[0]?.details?.id as string) ?? null;
+}
+
+async function addZohoNote(
+  accessToken: string,
+  leadId: string,
+  content: string
+): Promise<void> {
+  await fetch("https://www.zohoapis.com/crm/v7/Notes", {
+    method: "POST",
+    headers: {
+      Authorization: `Zoho-oauthtoken ${accessToken}`,
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify({
+      data: [
+        {
+          Note_Title: "Données outils — corpshore.fr",
+          Note_Content: content,
+          Parent_Id: leadId,
+          se_module: "Leads",
+        },
+      ],
+    }),
   });
 }
 
@@ -102,15 +128,18 @@ export async function POST(req: NextRequest) {
   try {
     const accessToken = await getZohoAccessToken();
     if (accessToken) {
-      await Promise.all([
+      const [leadId] = await Promise.all([
+        createZohoCRMLead(accessToken, data),
         subscribeToZohoCampaigns(accessToken, {
           email: data.email ?? "",
           firstName: data.prenom ?? "",
           lastName: data.nom ?? "",
           company: data.societe,
         }),
-        createZohoCRMLead(accessToken, data),
       ]);
+      if (leadId && data.tool_insights) {
+        await addZohoNote(accessToken, leadId, data.tool_insights);
+      }
     }
   } catch {
     // Zoho errors are non-fatal — form submission succeeds regardless
