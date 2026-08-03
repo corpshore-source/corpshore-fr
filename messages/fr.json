@@ -2,7 +2,7 @@
   "Meta": {
     "siteName": "Corpshore France",
     "titleTemplate": "%s · Corpshore France",
-    "defaultTitle": "Corpshore France — #1 BPO en France",
+    "defaultTitle": "Corpshore France : #1 BPO en France",
     "defaultDescription": "Corpshore France, #1 BPO en France par Outsource Accelerator. Externalisation BPO, IT, IA et RH pour les entreprises françaises et francophones. 18 pays, 35 langues."
   },
   "Nav": {
@@ -19,7 +19,7 @@
   },
   "Home": {
     "hero": {
-      "badge": "🏆 #1 BPO en France — Outsource Accelerator 2026",
+      "badge": "🏆 #1 BPO en France · Outsource Accelerator 2026",
       "h1": "La référence mondiale en externalisation au service de la France.",
       "sub": "BPO, IT, IA et RH externalisés pour les entreprises françaises et francophones. 18 pays, 35 langues, 10 ans d'excellence.",
       "cta1": "Demander un devis gratuit",
@@ -37,22 +37,22 @@
       "h2": "Le standard mondial de l'externalisation francophone.",
       "sub": "Aucun autre prestataire BPO ne combine l'expertise francophone native, l'infrastructure de livraison mondiale et la conformité réglementaire à cette échelle.",
       "expertise": { "title": "Expertise francophone native", "body": "Tous les travaux en langue française sont réalisés par des locuteurs natifs. Nos agents, développeurs et juristes maîtrisent les standards culturels et réglementaires français." },
-      "network": { "title": "Réseau de livraison mondial", "body": "11 hubs sur 4 continents — Amériques, Europe, Afrique, Asie — pour choisir le bon hub selon votre budget, fuseau horaire et exigences linguistiques." },
+      "network": { "title": "Réseau de livraison mondial", "body": "11 hubs sur 4 continents : Amériques, Europe, Afrique, Asie. Choisissez le bon hub selon votre budget, fuseau horaire et exigences linguistiques." },
       "ai": { "title": "Opérations augmentées par l'IA", "body": "Corpshore AI déploie des pipelines NLP, RPA et IA générative pour réduire les délais de traitement et améliorer la qualité sur toutes les lignes de service." },
-      "rgpd": { "title": "Conformité RGPD & réglementaire", "body": "RGPD intégral, protocoles sécurité ANSSI, certification HDS pour les données de santé, et conformité AMF/ACPR pour les services financiers." },
+      "rgpd": { "title": "Conformité RGPD & réglementaire", "body": "RGPD intégral, protocoles sécurité ANSSI, certification HDS pour les données de santé et conformité AMF/ACPR pour les services financiers." },
       "ramp": { "title": "Démarrage rapide", "body": "Équipes opérationnelles déployées en 4 à 6 semaines. Scalable de 5 à 500+ agents sans frais cachés ni engagement d'infrastructure." },
       "sla": { "title": "Performance contractualisée", "body": "SLA contractuels sur CSAT, AHT et QA. Rapports mensuels, chef de projet dédié et revues exécutives trimestrielles." }
     },
     "rankings": {
       "label": "Classements vérifiés",
       "h2": "Classé indépendamment. Leader constant.",
-      "source": "Classements issus d'outsourceaccelerator.com — le premier annuaire BPO mondial.",
+      "source": "Classements issus d'outsourceaccelerator.com, le premier annuaire BPO mondial.",
       "r1": "#1 BPO en France",
-      "r1sub": "Outsource Accelerator 2026 — Top 30 BPO en France",
+      "r1sub": "Outsource Accelerator 2026, Top 30 BPO en France",
       "r2": "#2 BPO en Europe",
-      "r2sub": "Outsource Accelerator 2026 — Top 40 BPO en Europe",
+      "r2sub": "Outsource Accelerator 2026, Top 40 BPO en Europe",
       "r3": "Top 5 IA mondiale",
-      "r3sub": "Outsource Accelerator 2026 — Division IA & Automatisation"
+      "r3sub": "Outsource Accelerator 2026, Division IA & Automatisation"
     },
     "services": {
       "label": "Lignes de service",
@@ -62,12 +62,12 @@
       "ai": { "title": "Corpshore AI", "body": "Automatisation IA, NLP, labellisation de données, développement chatbot, RPA et intégration IA générative pour les workflows enterprise." },
       "hr": { "title": "RH Externalisée", "body": "Acquisition de talents, onboarding, traitement de paie, Employer of Record (EOR) et conformité droit social français." },
       "finance": { "title": "Finance & Comptabilité", "body": "Comptes fournisseurs/clients, reporting financier, comptabilité PCG, support trésorerie et préparation d'audit." },
-      "cx": { "title": "Service Client", "body": "Support client multicanal en français — téléphone, email, chat, réseaux sociaux — avec SLA CSAT contractuels." }
+      "cx": { "title": "Service Client", "body": "Support client multicanal en français : téléphone, email, chat et réseaux sociaux, avec SLA CSAT contractuels." }
     },
     "hubs": {
       "label": "Réseau de livraison",
       "h2": "11 hubs. 4 continents. Un seul standard.",
-      "sub": "Notre réseau mondial vous permet de choisir le hub adapté à votre budget, fuseau horaire et exigences linguistiques — sans jamais sacrifier la qualité."
+      "sub": "Notre réseau mondial vous permet de choisir le hub adapté à votre budget, fuseau horaire et exigences linguistiques, sans jamais sacrifier la qualité."
     },
     "cta": {
       "h2": "Prêt à faire évoluer vos opérations ?",
@@ -84,7 +84,7 @@
     "hero": {
       "label": "Services",
       "h1": "Six lignes de service. Un partenaire unique pour la France.",
-      "sub": "Des contrats à géométrie variable — de la mission ponctuelle au partenariat pluriannuel — avec des SLA contractuels et un chef de projet dédié."
+      "sub": "De la mission ponctuelle au partenariat pluriannuel : des contrats flexibles avec des SLA contractuels et un chef de projet dédié."
     }
   },
   "Industries": {
@@ -134,7 +134,7 @@
       "tel": "Téléphone",
       "pays": "Pays",
       "poste": "Poste souhaité",
-      "cv": "CV (PDF, DOC, DOCX — max 5 Mo)",
+      "cv": "CV (PDF, DOC, DOCX, max 5 Mo)",
       "lettre": "Lettre de motivation",
       "rgpd": "J'accepte que mes données soient traitées par Corpshore France conformément au RGPD.",
       "submit": "Envoyer ma candidature",

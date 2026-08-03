@@ -6,6 +6,7 @@ import { Container, Section } from "@/components/ui/container";
 import { buttonVariants } from "@/components/ui/button";
 import { PageHero } from "@/components/layout/page-hero";
 import { CtaBanner } from "@/components/marketing/cta-banner";
+import Image from "next/image";
 import { cn } from "@/lib/utils";
 
 export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }): Promise<Metadata> {
@@ -17,6 +18,7 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
 const services = [
   {
     icon: "🏢",
+    image: "/images/paris-la-defense-business.webp",
     titleKey: "bpo",
     detail: [
       "Saisie et contrôle de données (400–1 000 enregistrements/jour/agent)",
@@ -35,6 +37,7 @@ const services = [
   },
   {
     icon: "💻",
+    image: "/images/equipe-teletravail-francophonie.webp",
     titleKey: "it",
     detail: [
       "Équipes offshore dédiées full-stack (React/Next.js, Node, Python, Java)",
@@ -53,6 +56,7 @@ const services = [
   },
   {
     icon: "🤖",
+    image: "/images/ai-annotation-equipe.webp",
     titleKey: "ai",
     detail: [
       "Pipelines NLP et traitement du langage naturel en français",
@@ -71,6 +75,7 @@ const services = [
   },
   {
     icon: "👥",
+    image: "/images/recrutement-teletravail-france.webp",
     titleKey: "hr",
     detail: [
       "Acquisition de talents et recrutement cadres (Executive Search)",
@@ -89,6 +94,7 @@ const services = [
   },
   {
     icon: "📈",
+    image: "/images/secteur-public-digitalisation.webp",
     titleKey: "finance",
     detail: [
       "Comptabilité générale PCG et clôtures mensuelles/annuelles",
@@ -107,6 +113,7 @@ const services = [
   },
   {
     icon: "📞",
+    image: "/images/agent-support-francophone.webp",
     titleKey: "cx",
     detail: [
       "Support téléphonique, email, chat en direct et réseaux sociaux",
@@ -140,7 +147,7 @@ function ServicesContent() {
       <Section tone="default">
         <Container>
           <div className="space-y-16">
-            {services.map(({ icon, titleKey, detail }, i) => (
+            {services.map(({ icon, image, titleKey, detail }, i) => (
               <div key={titleKey} className={cn(
                 "grid grid-cols-1 lg:grid-cols-2 gap-10 items-start",
                 i % 2 === 1 ? "lg:flex-row-reverse" : ""
@@ -168,11 +175,15 @@ function ServicesContent() {
                   </div>
                 </div>
                 <div className={cn(
-                  "bg-[var(--color-calcaire)] rounded-[var(--radius-xl)] p-8 border border-[var(--color-border)]",
+                  "rounded-[var(--radius-xl)] overflow-hidden border border-[var(--color-border)] bg-[var(--color-calcaire)]",
                   i % 2 === 1 ? "lg:order-1" : ""
                 )}>
-                  <div className="text-6xl text-center mb-6">{icon}</div>
-                  <div className="space-y-3">
+                  <div className="relative h-52">
+                    <Image src={image} alt="" fill className="object-cover" />
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent" />
+                    <span className="absolute bottom-3 left-3 text-3xl">{icon}</span>
+                  </div>
+                  <div className="p-6 space-y-3">
                     {["Délai de déploiement", "Modèle tarifaire", "Engagement SLA"].map((label, j) => (
                       <div key={label} className="flex justify-between items-center py-2 border-b border-[var(--color-border)] last:border-0 text-sm">
                         <span className="text-[var(--color-granit)]">{label}</span>

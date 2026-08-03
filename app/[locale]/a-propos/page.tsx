@@ -6,6 +6,7 @@ import { Container, Section, Eyebrow } from "@/components/ui/container";
 import { buttonVariants } from "@/components/ui/button";
 import { PageHero } from "@/components/layout/page-hero";
 import { CtaBanner } from "@/components/marketing/cta-banner";
+import Image from "next/image";
 import { SITE } from "@/lib/site";
 
 export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }): Promise<Metadata> {
@@ -17,7 +18,7 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
 const timeline = [
   { year: "2015", event: "Fondation de Corpshore Solutions Corporation à Toronto, Canada." },
   { year: "2017", event: "Ouverture du premier hub francophone en République Dominicaine." },
-  { year: "2019", event: "Expansion en Europe — hub Pologne dédié aux marchés FR/DE/UK." },
+  { year: "2019", event: "Expansion en Europe : hub Pologne dédié aux marchés FR/DE/UK." },
   { year: "2021", event: "Lancement de Corpshore AI et du service d'externalisation IA." },
   { year: "2023", event: "Présence dans 18 pays. Dépassement du seuil 500+ clients servis." },
   { year: "2026", event: "Classement #1 BPO en France par Outsource Accelerator." },
@@ -60,7 +61,15 @@ function AboutContent() {
                   Notre particularité : nous n'avons jamais cherché à être le prestataire le moins cher du marché. Nous sommes le prestataire qui livre la meilleure qualité au meilleur rapport valeur/coût pour les entreprises françaises et francophones exigeantes.
                 </p>
               </div>
-              <div className="mt-8">
+              <div className="relative mt-8 h-52 rounded-xl overflow-hidden ring-1 ring-[var(--color-border)]">
+                <Image
+                  src="/images/histoire-lumieres-tech.webp"
+                  alt="Histoire de Corpshore"
+                  fill
+                  className="object-cover"
+                />
+              </div>
+              <div className="mt-6">
                 <a href={SITE.globalUrl} target="_blank" rel="noopener noreferrer" className={buttonVariants({ variant: "secondary", size: "sm" })}>
                   Corpshore Global ↗
                 </a>

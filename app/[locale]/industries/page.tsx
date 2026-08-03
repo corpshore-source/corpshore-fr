@@ -97,6 +97,7 @@ function IndustriesContent() {
         label={t("hero.label")}
         heading={t("hero.h1")}
         sub={t("hero.sub")}
+        image="/images/secteur-public-digitalisation.webp"
       />
 
       <Section tone="default">

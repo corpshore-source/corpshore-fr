@@ -1,6 +1,6 @@
 {
   "Meta": {
-    "defaultTitle": "Corpshore France — #1 BPO in France",
+    "defaultTitle": "Corpshore France: #1 BPO in France",
     "defaultDescription": "Corpshore France, #1 BPO in France by Outsource Accelerator. BPO, IT, AI and HR outsourcing for French and Francophone businesses. 18 countries, 35 languages."
   },
   "Nav": {
@@ -17,7 +17,7 @@
   },
   "Home": {
     "hero": {
-      "badge": "🏆 #1 BPO in France — Outsource Accelerator 2026",
+      "badge": "🏆 #1 BPO in France · Outsource Accelerator 2026",
       "h1": "France's #1 BPO company. Global outsourcing, Francophone expertise.",
       "sub": "BPO, IT, AI and HR outsourced for French and Francophone businesses. 18 countries, 35 languages, 10 years of excellence.",
       "cta1": "Request a Free Quote",
@@ -35,22 +35,22 @@
       "h2": "The global standard for Francophone outsourcing.",
       "sub": "No other BPO provider combines native Francophone expertise, global delivery infrastructure and regulatory compliance at this scale.",
       "expertise": { "title": "Native Francophone Expertise", "body": "All French-language work is handled by native speakers. Our agents, developers and legal experts master French cultural and regulatory standards." },
-      "network": { "title": "Global Delivery Network", "body": "11 hubs across 4 continents — Americas, Europe, Africa, Asia — to choose the right hub for your budget, timezone and language requirements." },
+      "network": { "title": "Global Delivery Network", "body": "11 hubs across 4 continents: Americas, Europe, Africa and Asia. Choose the right hub for your budget, timezone and language requirements." },
       "ai": { "title": "AI-Enhanced Operations", "body": "Corpshore AI deploys NLP pipelines, RPA and generative AI to reduce processing time and improve quality across all service lines." },
-      "rgpd": { "title": "GDPR & Regulatory Compliance", "body": "Full GDPR compliance, ANSSI security protocols, HDS certification for healthcare data, and AMF/ACPR compliance for financial services." },
+      "rgpd": { "title": "GDPR & Regulatory Compliance", "body": "Full GDPR compliance, ANSSI security protocols, HDS certification for healthcare data and AMF/ACPR compliance for financial services." },
       "ramp": { "title": "Rapid Ramp-Up", "body": "Operational teams deployed within 4–6 weeks. Scalable from 5 to 500+ agents with no hidden fees or infrastructure lock-in." },
       "sla": { "title": "Contractual Performance", "body": "Contractual SLAs on CSAT, AHT and QA. Monthly reports, dedicated account manager and quarterly executive business reviews." }
     },
     "rankings": {
       "label": "Verified Rankings",
       "h2": "Independently ranked. Consistently leading.",
-      "source": "Rankings sourced from outsourceaccelerator.com — the world's leading BPO directory.",
+      "source": "Rankings sourced from outsourceaccelerator.com, the world's leading BPO directory.",
       "r1": "#1 BPO in France",
-      "r1sub": "Outsource Accelerator 2026 — Top 30 BPO Companies in France",
+      "r1sub": "Outsource Accelerator 2026, Top 30 BPO Companies in France",
       "r2": "#2 BPO in Europe",
-      "r2sub": "Outsource Accelerator 2026 — Top 40 BPO Companies in Europe",
+      "r2sub": "Outsource Accelerator 2026, Top 40 BPO Companies in Europe",
       "r3": "Top 5 Global AI",
-      "r3sub": "Outsource Accelerator 2026 — AI & Automation Division"
+      "r3sub": "Outsource Accelerator 2026, AI & Automation Division"
     },
     "services": {
       "label": "Service Lines",
@@ -60,12 +60,12 @@
       "ai": { "title": "Corpshore AI", "body": "AI automation, NLP, data labelling, chatbot development, RPA and generative AI integration for enterprise workflows." },
       "hr": { "title": "HR Outsourcing", "body": "Talent acquisition, onboarding, payroll, Employer of Record (EOR) and French labour law compliance." },
       "finance": { "title": "Finance & Accounting", "body": "Accounts payable/receivable, financial reporting, PCG bookkeeping, treasury support and audit preparation." },
-      "cx": { "title": "Customer Service", "body": "Multichannel French customer support — phone, email, chat, social — with contractual CSAT SLAs." }
+      "cx": { "title": "Customer Service", "body": "Multichannel French customer support across phone, email, chat and social, with contractual CSAT SLAs." }
     },
     "hubs": {
       "label": "Delivery Network",
       "h2": "11 hubs. 4 continents. One standard.",
-      "sub": "Our global delivery network lets you choose the right hub for your budget, timezone and language requirements — without sacrificing quality."
+      "sub": "Our global delivery network lets you choose the right hub for your budget, timezone and language requirements, without sacrificing quality."
     },
     "cta": {
       "h2": "Ready to scale your operations?",
@@ -82,7 +82,7 @@
     "hero": {
       "label": "Services",
       "h1": "Six service lines. One partner for France.",
-      "sub": "Flexible contracts — from a one-off assignment to a multi-year partnership — with contractual SLAs and a dedicated account manager."
+      "sub": "From a one-off assignment to a multi-year partnership: flexible contracts with contractual SLAs and a dedicated account manager."
     }
   },
   "Industries": {
@@ -132,7 +132,7 @@
       "tel": "Phone",
       "pays": "Country",
       "poste": "Position",
-      "cv": "CV (PDF, DOC, DOCX — max 5 MB)",
+      "cv": "CV (PDF, DOC, DOCX, max 5 MB)",
       "lettre": "Cover letter",
       "rgpd": "I agree that my data will be processed by Corpshore France in accordance with GDPR.",
       "submit": "Submit application",
