@@ -1,9 +1,12 @@
 "use client";
 import { useState } from "react";
 import { useTranslations, useLocale } from "next-intl";
+import Script from "next/script";
 import { Container, Section, Eyebrow } from "@/components/ui/container";
 import { PageHero } from "@/components/layout/page-hero";
 import { jobs } from "@/lib/data/jobs";
+
+const TURNSTILE_SITE_KEY = "0x4AAAAAAEFhVlYr9OXOOWyC";
 
 // Note: this page uses client-side filtering so we use a client component at the page level.
 // generateMetadata is handled by the parent layout for this locale.
@@ -15,6 +18,42 @@ export default function CarriersPage() {
 
   const [dept, setDept] = useState("all");
   const [level, setLevel] = useState("all");
+  const [formStatus, setFormStatus] = useState<"idle" | "sending" | "sent" | "error">("idle");
+  const [formError, setFormError] = useState("");
+
+  async function handleApply(e: React.FormEvent<HTMLFormElement>) {
+    e.preventDefault();
+    setFormStatus("sending");
+    const form = e.currentTarget;
+    const data = Object.fromEntries(
+      Array.from(new FormData(form)).filter(([, v]) => typeof v === "string")
+    ) as Record<string, string>;
+
+    try {
+      const res = await fetch("/api/careers", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(data),
+      });
+      if (res.ok) {
+        setFormStatus("sent");
+        form.reset();
+        if (typeof window !== "undefined" && (window as any).turnstile) {
+          (window as any).turnstile.reset();
+        }
+      } else {
+        const body = await res.json().catch(() => ({}));
+        setFormError(body.error ?? (isFr ? "Une erreur est survenue." : "An error occurred."));
+        setFormStatus("error");
+        if (typeof window !== "undefined" && (window as any).turnstile) {
+          (window as any).turnstile.reset();
+        }
+      }
+    } catch {
+      setFormError(isFr ? "Impossible d'envoyer la candidature." : "Could not send application.");
+      setFormStatus("error");
+    }
+  }
 
   const departments = ["all", ...new Set(jobs.map((j) => isFr ? j.department : j.departmentEn))];
   const levels = ["all", ...new Set(jobs.map((j) => isFr ? j.level : j.levelEn))];
@@ -34,6 +73,7 @@ export default function CarriersPage() {
 
   return (
     <>
+      <Script src="https://challenges.cloudflare.com/turnstile/v0/api.js" strategy="lazyOnload" />
       <PageHero
         label={t("hero.label")}
         heading={t("hero.h1")}
@@ -139,7 +179,19 @@ export default function CarriersPage() {
           <Eyebrow>{isFr ? "Postuler" : "Apply"}</Eyebrow>
           <h2 className="mb-8">{t("form.h2")}</h2>
           <div className="card-base p-8">
-            <form action="#" method="post">
+            {formStatus === "sent" ? (
+              <div className="text-center py-10">
+                <div className="text-5xl mb-4">✅</div>
+                <h3 className="mb-3">{isFr ? "Candidature envoyée !" : "Application sent!"}</h3>
+                <p className="text-[var(--color-granit)]">
+                  {isFr ? "Nous vous répondons sous 5 jours ouvrables." : "We will reply within 5 business days."}
+                </p>
+                <button onClick={() => setFormStatus("idle")} className="mt-6 text-sm font-semibold text-[var(--color-marine-800)] hover:underline cursor-pointer">
+                  {isFr ? "Postuler à un autre poste" : "Apply for another position"}
+                </button>
+              </div>
+            ) : (
+            <form onSubmit={handleApply}>
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-4">
                 <div>
                   <label className="block text-sm font-medium mb-1.5">{t("form.nom")} *</label>
@@ -188,16 +240,25 @@ export default function CarriersPage() {
                 <label className="block text-sm font-medium mb-1.5">{t("form.lettre")}</label>
                 <textarea name="lettre" rows={4} className="w-full px-3 py-2 text-sm border border-[var(--color-border)] rounded-[var(--radius)] focus:outline-none focus:ring-2 focus:ring-[var(--color-marine-800)] resize-y" />
               </div>
-              <div className="mb-6 flex gap-2.5 items-start">
+              <div className="mb-5 flex gap-2.5 items-start">
                 <input type="checkbox" id="rgpd-careers" name="rgpd" required className="mt-0.5 h-4 w-4 accent-[var(--color-marine-800)]" />
                 <label htmlFor="rgpd-careers" className="text-xs text-[var(--color-granit)] leading-relaxed">
                   {t("form.rgpd")} *
                 </label>
               </div>
-              <button type="submit" className="w-full h-11 bg-[var(--color-marine-800)] text-white text-sm font-semibold rounded-[var(--radius)] hover:bg-[var(--color-marine-700)] transition-colors cursor-pointer">
-                {t("form.submit")}
+              <div className="cf-turnstile mb-5" data-sitekey={TURNSTILE_SITE_KEY} />
+              <button
+                type="submit"
+                disabled={formStatus === "sending"}
+                className="w-full h-11 bg-[var(--color-marine-800)] text-white text-sm font-semibold rounded-[var(--radius)] hover:bg-[var(--color-marine-700)] disabled:opacity-60 transition-colors cursor-pointer"
+              >
+                {formStatus === "sending" ? (isFr ? "Envoi en cours…" : "Sending…") : t("form.submit")}
               </button>
+              {formStatus === "error" && (
+                <p className="text-red-600 text-sm mt-3">{formError}</p>
+              )}
             </form>
+            )}
           </div>
         </Container>
       </Section>
