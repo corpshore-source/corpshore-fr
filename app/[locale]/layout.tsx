@@ -42,6 +42,14 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
     metadataBase: new URL(SITE.url),
     title: { template: t("titleTemplate"), default: t("defaultTitle") },
     description: t("defaultDescription"),
+    icons: {
+      icon: [
+        { url: "/icon.png", type: "image/png" },
+      ],
+      apple: [
+        { url: "/apple-icon.png", type: "image/png" },
+      ],
+    },
     openGraph: {
       siteName: t("siteName"),
       locale: ogLocale,
