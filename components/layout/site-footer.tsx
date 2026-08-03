@@ -2,6 +2,7 @@ import { useTranslations } from "next-intl";
 import { Link } from "@/i18n/navigation";
 import { Container } from "@/components/ui/container";
 import { SITE } from "@/lib/site";
+import Image from "next/image";
 
 export function SiteFooter() {
   const t = useTranslations("Footer");
@@ -16,14 +17,22 @@ export function SiteFooter() {
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10">
           {/* Brand */}
           <div className="lg:col-span-1">
-            <Link href="/" className="flex items-center gap-2.5 mb-4">
-              <div className="w-8 h-8 bg-white/10 rounded-[var(--radius-sm)] flex items-center justify-center border border-white/20">
-                <svg viewBox="0 0 24 24" className="w-5 h-5">
-                  <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"
-                    stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" fill="none" />
-                </svg>
-              </div>
-              <span className="font-bold text-sm">Corpshore France</span>
+            <Link href="/" className="flex items-center gap-2.5 mb-4 group">
+              <Image
+                src="/images/logo-icon.png"
+                alt=""
+                width={32}
+                height={32}
+                className="h-8 w-8 shrink-0 opacity-95 group-hover:opacity-100 transition-opacity"
+              />
+              <span className="flex flex-col leading-none">
+                <span className="font-bold text-white text-[15px] tracking-tight">
+                  Corpshore
+                </span>
+                <span className="text-[9px] font-semibold text-white/50 uppercase tracking-[0.18em] mt-0.5">
+                  France
+                </span>
+              </span>
             </Link>
             <p className="text-sm text-white/65 leading-relaxed mb-4">{t("tagline")}</p>
             <p className="text-xs text-white/50 mb-1">

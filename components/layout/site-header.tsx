@@ -13,9 +13,16 @@ export function SiteHeader() {
   const pathname = usePathname();
   const [scrolled, setScrolled] = useState(false);
   const [open, setOpen] = useState(false);
+  const [progress, setProgress] = useState(0);
 
   useEffect(() => {
-    const handler = () => setScrolled(window.scrollY > 16);
+    const handler = () => {
+      const sy = window.scrollY;
+      setScrolled(sy > 16);
+      const docEl = document.documentElement;
+      const sh = docEl.scrollHeight - docEl.clientHeight;
+      setProgress(sh > 0 ? (sy / sh) * 100 : 0);
+    };
     window.addEventListener("scroll", handler, { passive: true });
     return () => window.removeEventListener("scroll", handler);
   }, []);
@@ -43,11 +50,32 @@ export function SiteHeader() {
             : "bg-white/90 backdrop-blur-sm"
         )}
       >
+        {/* Scroll progress bar */}
+        <div
+          className="absolute bottom-0 left-0 h-[2px] bg-[var(--color-vermeil-500)] transition-none origin-left"
+          style={{ width: `${progress}%` }}
+          aria-hidden="true"
+        />
         <div className="container-page">
           <nav className="flex items-center h-16 gap-4" aria-label="Navigation principale">
             {/* Logo */}
-            <Link href="/" className="flex items-center gap-2 mr-4 shrink-0">
-              <Image src="/images/logo.png" alt="Corpshore France" width={140} height={40} className="h-9 w-auto" priority />
+            <Link href="/" className="flex items-center gap-2.5 mr-4 shrink-0 group">
+              <Image
+                src="/images/logo-icon.png"
+                alt=""
+                width={36}
+                height={36}
+                className="h-9 w-9 shrink-0"
+                priority
+              />
+              <span className="flex flex-col leading-none">
+                <span className="font-bold text-[var(--color-marine-800)] text-[15px] tracking-tight group-hover:text-[var(--color-marine-700)] transition-colors">
+                  Corpshore
+                </span>
+                <span className="text-[9px] font-semibold text-[var(--color-granit)] uppercase tracking-[0.18em] mt-0.5">
+                  France
+                </span>
+              </span>
             </Link>
 
             {/* Desktop nav */}

@@ -7,6 +7,7 @@ import { Analytics } from "@vercel/analytics/next";
 import { routing, localeMeta } from "@/i18n/routing";
 import { SiteHeader } from "@/components/layout/site-header";
 import { SiteFooter } from "@/components/layout/site-footer";
+import { FloatCta } from "@/components/ui/float-cta";
 import { SITE } from "@/lib/site";
 import "@/app/globals.css";
 
@@ -138,6 +139,7 @@ export default async function LocaleLayout({
             {children}
           </main>
           <SiteFooter />
+          <FloatCta />
         </NextIntlClientProvider>
         <Analytics />
       </body>

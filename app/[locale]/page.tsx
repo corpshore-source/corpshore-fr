@@ -7,6 +7,9 @@ import { Container, Section, Eyebrow } from "@/components/ui/container";
 import { buttonVariants } from "@/components/ui/button";
 import { TrustBar } from "@/components/marketing/trust-bar";
 import { CtaBanner } from "@/components/marketing/cta-banner";
+import { CountUp } from "@/components/ui/count-up";
+import { ScrollReveal } from "@/components/ui/scroll-reveal";
+import { ServiceTabs } from "@/components/home/service-tabs";
 import { SITE } from "@/lib/site";
 import { pageAlternates, KEYWORDS } from "@/lib/seo";
 
@@ -67,12 +70,14 @@ function HomeContent() {
               {/* Mini stats */}
               <div className="mt-10 flex flex-wrap gap-8 pt-8 border-t border-white/10">
                 {[
-                  { num: "18", label: t("trust.countries") },
-                  { num: "35", label: t("trust.languages") },
-                  { num: "500+", label: t("trust.clients") },
-                ].map(({ num, label }) => (
+                  { to: 18, suffix: "", label: t("trust.countries") },
+                  { to: 35, suffix: "", label: t("trust.languages") },
+                  { to: 500, suffix: "+", label: t("trust.clients") },
+                ].map(({ to, suffix, label }) => (
                   <div key={label}>
-                    <div className="text-3xl font-bold font-mono text-[var(--color-or-400)]">{num}</div>
+                    <div className="text-3xl font-bold font-mono text-[var(--color-or-400)] stat-num">
+                      <CountUp to={to} suffix={suffix} />
+                    </div>
                     <div className="text-xs text-white/50 uppercase tracking-wider mt-0.5">{label}</div>
                   </div>
                 ))}
@@ -123,15 +128,17 @@ function HomeContent() {
           </div>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
             {whyItems.map(({ key, icon }, i) => (
-              <div key={key} className="card-base p-6 border-l-[3px] border-l-[var(--color-marine-800)] hover:shadow-md transition-shadow">
-                <div className="flex items-start gap-4">
-                  <span className="text-2xl shrink-0 mt-0.5">{icon}</span>
-                  <div>
-                    <h3 className="text-base mb-2">{t(`why.${key}.title`)}</h3>
-                    <p className="text-sm text-[var(--color-granit)] leading-relaxed">{t(`why.${key}.body`)}</p>
+              <ScrollReveal key={key} delay={i * 70}>
+                <div className="card-base p-6 border-l-[3px] border-l-[var(--color-marine-800)] hover:shadow-md transition-shadow h-full">
+                  <div className="flex items-start gap-4">
+                    <span className="text-2xl shrink-0 mt-0.5">{icon}</span>
+                    <div>
+                      <h3 className="text-base mb-2">{t(`why.${key}.title`)}</h3>
+                      <p className="text-sm text-[var(--color-granit)] leading-relaxed">{t(`why.${key}.body`)}</p>
+                    </div>
                   </div>
                 </div>
-              </div>
+              </ScrollReveal>
             ))}
           </div>
         </Container>
@@ -196,21 +203,15 @@ function HomeContent() {
             <Eyebrow>{t("services.label")}</Eyebrow>
             <h2>{t("services.h2")}</h2>
           </div>
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-            {serviceKeys.map((k) => (
-              <div key={k} className="card-base p-6 group hover:shadow-md transition-shadow">
-                <div className="text-3xl mb-4">{serviceIcons[k]}</div>
-                <h3 className="text-base mb-2">{t(`services.${k}.title`)}</h3>
-                <p className="text-sm text-[var(--color-granit)] leading-relaxed mb-4">{t(`services.${k}.body`)}</p>
-                <Link
-                  href="/services"
-                  className="text-sm font-semibold text-[var(--color-marine-800)] hover:text-[var(--color-vermeil-500)] transition-colors"
-                >
-                  {nav("services")} →
-                </Link>
-              </div>
-            ))}
-          </div>
+          <ServiceTabs
+            services={serviceKeys.map((k) => ({
+              key: k,
+              icon: serviceIcons[k],
+              title: t(`services.${k}.title`),
+              body: t(`services.${k}.body`),
+            }))}
+            cta={nav("services")}
+          />
         </Container>
       </Section>
 

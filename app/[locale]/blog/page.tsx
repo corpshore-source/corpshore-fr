@@ -1,11 +1,11 @@
 import type { Metadata } from "next";
 import { setRequestLocale, getTranslations } from "next-intl/server";
 import { useTranslations } from "next-intl";
-import Image from "next/image";
 import { Container, Section, Eyebrow } from "@/components/ui/container";
 import { PageHero } from "@/components/layout/page-hero";
 import { blogPosts } from "@/lib/data/blog";
 import { pressReleases } from "@/lib/data/press";
+import { BlogGrid } from "@/components/home/blog-grid";
 import type { AppLocale } from "@/i18n/routing";
 
 import { SITE } from "@/lib/site";
@@ -44,42 +44,12 @@ function BlogContent({ locale }: { locale: AppLocale }) {
             <Eyebrow>Blog</Eyebrow>
             <h2>{isFr ? "15 articles sur l'externalisation en France" : "15 articles on outsourcing in France"}</h2>
           </div>
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-            {blogPosts.map((post) => {
-              const imgSrc = `/images/${post.image}`;
-              return (
-              <article key={post.id} className="card-base flex flex-col overflow-hidden">
-                <div className="relative h-44 overflow-hidden bg-[var(--color-calcaire)]">
-                  <Image src={imgSrc} alt="" fill className="object-cover" />
-                </div>
-                <div className="p-5 flex flex-col flex-1">
-                  <div className="flex items-center gap-2 mb-3">
-                    <span className="sector-badge">{isFr ? post.category : post.categoryEn}</span>
-                    <span className="text-xs text-[var(--color-granit)]">
-                      {post.readTime} {t("readTime")}
-                    </span>
-                  </div>
-                  <h3 className="text-base leading-snug mb-3 flex-1">
-                    {isFr ? post.title : post.titleEn}
-                  </h3>
-                  <p className="text-sm text-[var(--color-granit)] leading-relaxed mb-4 line-clamp-3">
-                    {isFr ? post.excerpt : post.excerptEn}
-                  </p>
-                  <div className="flex items-center justify-between mt-auto pt-4 border-t border-[var(--color-border)]">
-                    <time className="text-xs text-[var(--color-granit)]">
-                      {new Date(post.date).toLocaleDateString(isFr ? "fr-FR" : "en-GB", {
-                        day: "numeric", month: "long", year: "numeric",
-                      })}
-                    </time>
-                    <span className="text-xs font-semibold text-[var(--color-marine-800)]">
-                      {t("readMore")} →
-                    </span>
-                  </div>
-                </div>
-              </article>
-              );
-            })}
-          </div>
+          <BlogGrid
+            posts={blogPosts}
+            locale={locale}
+            readTimeLabel={t("readTime")}
+            readMoreLabel={t("readMore")}
+          />
         </Container>
       </Section>
 
