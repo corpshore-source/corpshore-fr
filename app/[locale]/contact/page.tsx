@@ -4,6 +4,7 @@ import { useTranslations, useLocale } from "next-intl";
 import Script from "next/script";
 import { Container, Section, Eyebrow } from "@/components/ui/container";
 import { PageHero } from "@/components/layout/page-hero";
+import { RgpdChecker } from "@/components/tools/rgpd-checker";
 import { SITE } from "@/lib/site";
 
 const TURNSTILE_SITE_KEY = "0x4AAAAAAEFhVlYr9OXOOWyC";
@@ -79,6 +80,26 @@ export default function ContactPage() {
         heading={t("hero.h1")}
         sub={t("hero.sub")}
       />
+
+      {/* RGPD Compliance Checker */}
+      <Section tone="muted">
+        <Container>
+          <div className="text-center max-w-xl mx-auto mb-12">
+            <Eyebrow>{isFr ? "Vérificateur RGPD" : "GDPR checker"}</Eyebrow>
+            <h2>
+              {isFr
+                ? "Auditez votre conformité RGPD en 2 minutes"
+                : "Audit your GDPR compliance in 2 minutes"}
+            </h2>
+            <p className="mt-4 text-[var(--color-granit)]">
+              {isFr
+                ? "6 questions pour identifier vos risques RGPD avant d'externaliser — et comment Corpshore peut vous accompagner."
+                : "6 questions to identify your GDPR risks before outsourcing — and how Corpshore can help you address them."}
+            </p>
+          </div>
+          <RgpdChecker />
+        </Container>
+      </Section>
 
       <Section tone="default">
         <Container>

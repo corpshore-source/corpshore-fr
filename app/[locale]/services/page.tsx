@@ -2,12 +2,14 @@ import type { Metadata } from "next";
 import { setRequestLocale, getTranslations } from "next-intl/server";
 import { useTranslations } from "next-intl";
 import { Link } from "@/i18n/navigation";
-import { Container, Section } from "@/components/ui/container";
+import { Container, Section, Eyebrow } from "@/components/ui/container";
 import { buttonVariants } from "@/components/ui/button";
 import { PageHero } from "@/components/layout/page-hero";
 import { CtaBanner } from "@/components/marketing/cta-banner";
 import Image from "next/image";
 import { cn } from "@/lib/utils";
+import { WorkforcePlanner } from "@/components/tools/workforce-planner";
+import { SlaBuilder } from "@/components/tools/sla-builder";
 import { SITE } from "@/lib/site";
 import { pageAlternates, KEYWORDS } from "@/lib/seo";
 
@@ -142,9 +144,10 @@ const services = [
   },
 ] as const;
 
-function ServicesContent() {
+function ServicesContent({ locale }: { locale: string }) {
   const t = useTranslations("Services");
   const homeT = useTranslations("Home.services");
+  const isFr = locale === "fr";
 
   return (
     <>
@@ -210,6 +213,46 @@ function ServicesContent() {
         </Container>
       </Section>
 
+      {/* Workforce Planner */}
+      <Section tone="muted">
+        <Container>
+          <div className="text-center max-w-xl mx-auto mb-12">
+            <Eyebrow>{isFr ? "Simulateur d'effectif" : "Workforce planner"}</Eyebrow>
+            <h2>
+              {isFr
+                ? "Calculez votre effectif optimal et son coût"
+                : "Calculate your optimal headcount and cost"}
+            </h2>
+            <p className="mt-4 text-[var(--color-granit)]">
+              {isFr
+                ? "Entrez votre volume de contacts, la durée de traitement et vos objectifs SLA — nous calculons l'équipe nécessaire et le coût Corpshore."
+                : "Enter your contact volume, handling time and SLA targets — we calculate the team needed and the Corpshore cost."}
+            </p>
+          </div>
+          <WorkforcePlanner />
+        </Container>
+      </Section>
+
+      {/* SLA Builder */}
+      <Section tone="default">
+        <Container>
+          <div className="text-center max-w-xl mx-auto mb-12">
+            <Eyebrow>{isFr ? "Constructeur de SLA" : "SLA builder"}</Eyebrow>
+            <h2>
+              {isFr
+                ? "Configurez votre niveau de service en 3 étapes"
+                : "Configure your service level in 3 steps"}
+            </h2>
+            <p className="mt-4 text-[var(--color-granit)]">
+              {isFr
+                ? "Canaux, couverture horaire, objectifs CSAT — obtenez une recommandation de tier et une fourchette tarifaire indicative."
+                : "Channels, coverage hours, CSAT targets — get a tier recommendation and an indicative price range."}
+            </p>
+          </div>
+          <SlaBuilder />
+        </Container>
+      </Section>
+
       <CtaBanner />
     </>
   );
@@ -218,5 +261,5 @@ function ServicesContent() {
 export default async function ServicesPage({ params }: { params: Promise<{ locale: string }> }) {
   const { locale } = await params;
   setRequestLocale(locale);
-  return <ServicesContent />;
+  return <ServicesContent locale={locale} />;
 }

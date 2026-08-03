@@ -10,6 +10,9 @@ import { CtaBanner } from "@/components/marketing/cta-banner";
 import { CountUp } from "@/components/ui/count-up";
 import { ScrollReveal } from "@/components/ui/scroll-reveal";
 import { ServiceTabs } from "@/components/home/service-tabs";
+import { SavingsCalculator } from "@/components/tools/savings-calculator";
+import { ModelComparator } from "@/components/tools/model-comparator";
+import { ReadinessQuiz } from "@/components/tools/readiness-quiz";
 import { SITE } from "@/lib/site";
 import { pageAlternates, KEYWORDS } from "@/lib/seo";
 
@@ -27,9 +30,10 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
   };
 }
 
-function HomeContent() {
+function HomeContent({ locale }: { locale: string }) {
   const t = useTranslations("Home");
   const nav = useTranslations("Nav");
+  const isFr = locale === "fr";
 
   const whyItems = [
     { key: "expertise", icon: "🇫🇷" },
@@ -215,6 +219,22 @@ function HomeContent() {
         </Container>
       </Section>
 
+      {/* Savings Calculator */}
+      <Section tone="muted">
+        <Container>
+          <div className="text-center max-w-xl mx-auto mb-12">
+            <Eyebrow>{isFr ? "Calculateur d'économies" : "Savings calculator"}</Eyebrow>
+            <h2>{isFr ? "Estimez vos économies en 30 secondes" : "Estimate your savings in 30 seconds"}</h2>
+            <p className="mt-4 text-[var(--color-granit)]">
+              {isFr
+                ? "Comparez le coût réel d'une équipe internalisée en France avec le tarif Corpshore, charges sociales comprises."
+                : "Compare the real cost of an in-house French team with the Corpshore rate, including social charges."}
+            </p>
+          </div>
+          <SavingsCalculator />
+        </Container>
+      </Section>
+
       {/* Delivery hubs */}
       <Section tone="default">
         <Container>
@@ -243,6 +263,46 @@ function HomeContent() {
         </Container>
       </Section>
 
+      {/* Model Comparator */}
+      <Section tone="muted">
+        <Container>
+          <div className="text-center max-w-xl mx-auto mb-12">
+            <Eyebrow>{isFr ? "Comparatif des modèles" : "Model comparison"}</Eyebrow>
+            <h2>
+              {isFr
+                ? "Corpshore Afrique vs. interne France vs. offshore Asie"
+                : "Corpshore Africa vs. in-house France vs. offshore Asia"}
+            </h2>
+            <p className="mt-4 text-[var(--color-granit)]">
+              {isFr
+                ? "Cliquez sur chaque colonne pour comparer les 7 critères clés de l'externalisation."
+                : "Click each column to compare the 7 key outsourcing criteria."}
+            </p>
+          </div>
+          <ModelComparator />
+        </Container>
+      </Section>
+
+      {/* Readiness Quiz */}
+      <Section tone="default">
+        <Container>
+          <div className="text-center max-w-xl mx-auto mb-12">
+            <Eyebrow>{isFr ? "Diagnostic de maturité" : "Readiness assessment"}</Eyebrow>
+            <h2>
+              {isFr
+                ? "Êtes-vous prêt à externaliser ?"
+                : "Are you ready to outsource?"}
+            </h2>
+            <p className="mt-4 text-[var(--color-granit)]">
+              {isFr
+                ? "8 questions pour mesurer votre maturité et recevoir une recommandation personnalisée."
+                : "8 questions to measure your maturity and receive a personalised recommendation."}
+            </p>
+          </div>
+          <ReadinessQuiz />
+        </Container>
+      </Section>
+
       <CtaBanner />
     </>
   );
@@ -251,5 +311,5 @@ function HomeContent() {
 export default async function HomePage({ params }: { params: Promise<{ locale: string }> }) {
   const { locale } = await params;
   setRequestLocale(locale);
-  return <HomeContent />;
+  return <HomeContent locale={locale} />;
 }
