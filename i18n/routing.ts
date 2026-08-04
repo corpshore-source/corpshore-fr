@@ -23,6 +23,7 @@ export const routing = defineRouting({
     "/etudes-de-cas": "/etudes-de-cas",
     "/contact": "/contact",
     "/mentions-legales": "/mentions-legales",
+    "/devis": "/devis",
   },
 });
 

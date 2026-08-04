@@ -13,6 +13,7 @@ import { ServiceTabs } from "@/components/home/service-tabs";
 import { SavingsCalculator } from "@/components/tools/savings-calculator";
 import { ModelComparator } from "@/components/tools/model-comparator";
 import { ReadinessQuiz } from "@/components/tools/readiness-quiz";
+import { HomeFaq } from "@/components/home/home-faq";
 import { SITE } from "@/lib/site";
 import { pageAlternates, KEYWORDS } from "@/lib/seo";
 
@@ -303,13 +304,52 @@ function HomeContent({ locale }: { locale: string }) {
         </Container>
       </Section>
 
+      {/* FAQ — voice search + featured snippets */}
+      <HomeFaq />
+
       <CtaBanner />
     </>
   );
 }
 
+const FAQ_JSONLD_FR = [
+  { q: "Qu'est-ce que le BPO et comment fonctionne l'externalisation de processus ?", a: "Le BPO (Business Process Outsourcing) consiste à confier certains processus opérationnels — service client, saisie de données, comptabilité, support IT — à un prestataire spécialisé. Corpshore gère ces processus depuis ses hubs en Afrique, Europe et Amériques avec des équipes dédiées formées à vos procédures." },
+  { q: "Combien coûte l'externalisation BPO avec Corpshore ?", a: "Les tarifs Corpshore débutent à partir de 9 à 12 euros par FTE et par heure pour les configurations Starter, jusqu'à 15 à 20 euros par heure pour les configurations Enterprise. Un ETP internalisé en France coûte en moyenne 45 à 65 000 euros par an charges sociales comprises." },
+  { q: "Corpshore est-il vraiment classé #1 BPO en France ?", a: "Oui. Corpshore France est classé #1 parmi les sociétés de BPO en France par Outsource Accelerator, le principal annuaire mondial des prestataires BPO, basé sur la performance opérationnelle, la couverture géographique et la qualité de service." },
+  { q: "Quels services d'externalisation Corpshore propose-t-il ?", a: "Corpshore couvre six domaines : le BPO, l'infogérance IT, l'IA générative, les RH externalisées, la finance et comptabilité, et le service client multicanal." },
+  { q: "Combien de temps faut-il pour démarrer avec Corpshore ?", a: "La mise en place d'une équipe BPO avec Corpshore prend généralement de 2 à 4 semaines selon la complexité du périmètre. Les équipes IT et IA peuvent démarrer en 3 à 6 semaines." },
+];
+
+const FAQ_JSONLD_EN = [
+  { q: "What is BPO and how does business process outsourcing work?", a: "BPO (Business Process Outsourcing) means entrusting operational processes — customer service, data entry, accounting, IT support — to a specialist provider. Corpshore manages these processes from its delivery hubs in Africa, Europe, and the Americas with dedicated teams trained on your procedures." },
+  { q: "How much does BPO outsourcing with Corpshore cost?", a: "Corpshore rates start from 9 to 12 euros per FTE per hour for Starter configurations, up to 15 to 20 euros per hour for Enterprise. An in-house FTE in France costs on average 45,000 to 65,000 euros per year including social charges." },
+  { q: "Is Corpshore really ranked #1 BPO in France?", a: "Yes. Corpshore France is ranked #1 among BPO companies in France by Outsource Accelerator, the leading global BPO directory, based on operational performance, geographic coverage, and service quality." },
+  { q: "What outsourcing services does Corpshore offer?", a: "Corpshore covers six areas: BPO, IT managed services, generative AI, HR outsourcing, finance and accounting, and multichannel customer experience." },
+  { q: "How long does it take to start with Corpshore?", a: "Setting up a BPO team with Corpshore typically takes 2 to 4 weeks depending on scope complexity. IT and AI teams can start in 3 to 6 weeks." },
+];
+
 export default async function HomePage({ params }: { params: Promise<{ locale: string }> }) {
   const { locale } = await params;
   setRequestLocale(locale);
-  return <HomeContent locale={locale} />;
+
+  const faqItems = locale === "fr" ? FAQ_JSONLD_FR : FAQ_JSONLD_EN;
+  const faqJsonLd = {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    mainEntity: faqItems.map(({ q, a }) => ({
+      "@type": "Question",
+      name: q,
+      acceptedAnswer: { "@type": "Answer", text: a },
+    })),
+  };
+
+  return (
+    <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }}
+      />
+      <HomeContent locale={locale} />
+    </>
+  );
 }

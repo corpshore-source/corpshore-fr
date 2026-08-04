@@ -2,6 +2,8 @@ import { useTranslations } from "next-intl";
 import { Link } from "@/i18n/navigation";
 import { Container } from "@/components/ui/container";
 import { SITE } from "@/lib/site";
+import { NewsletterSignup } from "@/components/marketing/newsletter-signup";
+import { CalendlyButton } from "@/components/ui/calendly-button";
 import Image from "next/image";
 
 export function SiteFooter() {
@@ -14,9 +16,9 @@ export function SiteFooter() {
       <div className="tricolore-strip" />
 
       <Container className="py-14">
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10">
-          {/* Brand */}
-          <div className="lg:col-span-1">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-10">
+          {/* Brand + newsletter — spans 2 columns */}
+          <div className="lg:col-span-2">
             <Link href="/" className="flex items-center gap-2.5 mb-4 group">
               <Image
                 src="/images/logo-icon.png"
@@ -26,16 +28,12 @@ export function SiteFooter() {
                 className="h-8 w-8 shrink-0 opacity-95 group-hover:opacity-100 transition-opacity"
               />
               <span className="flex flex-col leading-none">
-                <span className="font-bold text-white text-[15px] tracking-tight">
-                  Corpshore
-                </span>
-                <span className="text-[9px] font-semibold text-white/50 uppercase tracking-[0.18em] mt-0.5">
-                  France
-                </span>
+                <span className="font-bold text-white text-[15px] tracking-tight">Corpshore</span>
+                <span className="text-[9px] font-semibold text-white/50 uppercase tracking-[0.18em] mt-0.5">France</span>
               </span>
             </Link>
             <p className="text-sm text-white/65 leading-relaxed mb-4">{t("tagline")}</p>
-            <p className="text-xs text-white/50 mb-1">
+            <p className="text-xs text-white/50 mb-4">
               <a href={`mailto:${SITE.email}`} className="hover:text-white/80 transition-colors">
                 📧 {SITE.email}
               </a>
@@ -44,10 +42,14 @@ export function SiteFooter() {
               href={SITE.oaUrl}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-1.5 mt-4 text-xs bg-[var(--color-or-500)]/20 border border-[var(--color-or-500)]/30 text-[var(--color-or-400)] px-3 py-1.5 rounded-[var(--radius-full)] hover:bg-[var(--color-or-500)]/30 transition-colors"
+              className="inline-flex items-center gap-1.5 text-xs bg-[var(--color-or-500)]/20 border border-[var(--color-or-500)]/30 text-[var(--color-or-400)] px-3 py-1.5 rounded-[var(--radius-full)] hover:bg-[var(--color-or-500)]/30 transition-colors mb-6"
             >
               🏆 {SITE.rankings.france}
             </a>
+            {/* Newsletter */}
+            <div className="border-t border-white/10 pt-6">
+              <NewsletterSignup dark />
+            </div>
           </div>
 
           {/* Services */}
@@ -80,14 +82,21 @@ export function SiteFooter() {
             </ul>
           </div>
 
-          {/* Legal */}
+          {/* Contact + Legal */}
           <div>
             <h3 className="text-sm font-semibold text-white mb-4">{t("legal")}</h3>
-            <ul className="space-y-2.5 text-sm text-white/60">
+            <ul className="space-y-2.5 text-sm text-white/60 mb-6">
               <li><Link href="/mentions-legales" className="hover:text-white transition-colors">{t("links.legal")}</Link></li>
-              <li><Link href={{ pathname: "/mentions-legales", hash: "rgpd" }} className="hover:text-white transition-colors">{t("links.rgpd")}</Link></li>
+              <li><Link href={{ pathname: "/mentions-legales", hash: "s2" }} className="hover:text-white transition-colors">{t("links.rgpd")}</Link></li>
               <li><Link href="/contact" className="hover:text-white transition-colors">{nav("contact")}</Link></li>
+              <li><Link href="/devis" className="hover:text-white transition-colors text-[var(--color-or-400)]">Demande de devis ↗</Link></li>
             </ul>
+            <CalendlyButton
+              label="Réserver un appel"
+              variant="onDark"
+              size="sm"
+              className="w-full justify-center"
+            />
           </div>
         </div>
 
@@ -96,6 +105,7 @@ export function SiteFooter() {
           <span>{t("copyright")}</span>
           <div className="flex gap-6">
             <Link href="/mentions-legales" className="hover:text-white/70 transition-colors">{t("links.legal")}</Link>
+            <Link href="/devis" className="hover:text-white/70 transition-colors">Devis gratuit</Link>
             <a href={SITE.oaUrl} target="_blank" rel="noopener noreferrer" className="hover:text-white/70 transition-colors">
               OA #1 France
             </a>

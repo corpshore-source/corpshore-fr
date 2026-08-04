@@ -32,7 +32,7 @@ async function getZohoAccessToken(): Promise<string | null> {
 async function createRecruitCandidate(
   accessToken: string,
   data: Record<string, string>
-): Promise<void> {
+): Promise<string | null> {
   const body = {
     data: [
       {
@@ -47,8 +47,7 @@ async function createRecruitCandidate(
       },
     ],
   };
-
-  await fetch("https://recruit.zoho.com/recruit/v2/Candidates", {
+  const res = await fetch("https://recruit.zoho.com/recruit/v2/Candidates", {
     method: "POST",
     headers: {
       Authorization: `Zoho-oauthtoken ${accessToken}`,
@@ -56,28 +55,63 @@ async function createRecruitCandidate(
     },
     body: JSON.stringify(body),
   });
+  const result = await res.json();
+  return (result?.data?.[0]?.details?.id as string) ?? null;
+}
+
+async function uploadCvToRecruit(
+  accessToken: string,
+  candidateId: string,
+  cvFile: File
+): Promise<void> {
+  const form = new FormData();
+  form.append("file", cvFile, cvFile.name);
+  await fetch(
+    `https://recruit.zoho.com/recruit/v2/Candidates/${candidateId}/Attachments`,
+    {
+      method: "POST",
+      headers: { Authorization: `Zoho-oauthtoken ${accessToken}` },
+      body: form,
+    }
+  );
 }
 
 export async function POST(req: NextRequest) {
-  let data: Record<string, string>;
+  let formData: FormData;
   try {
-    data = await req.json();
+    formData = await req.formData();
   } catch {
     return NextResponse.json({ error: "Invalid request" }, { status: 400 });
   }
 
-  const tsOk = await verifyTurnstile(data["cf-turnstile-response"] ?? "");
+  const get = (key: string) => ((formData.get(key) as string) ?? "").trim();
+
+  const tsOk = await verifyTurnstile(get("cf-turnstile-response"));
   if (!tsOk) {
     return NextResponse.json({ error: "Security check failed. Please try again." }, { status: 400 });
   }
 
+  const fields: Record<string, string> = {
+    nom: get("nom"),
+    prenom: get("prenom"),
+    email: get("email"),
+    tel: get("tel"),
+    pays: get("pays"),
+    poste: get("poste"),
+    lettre: get("lettre"),
+  };
+
   try {
     const accessToken = await getZohoAccessToken();
     if (accessToken) {
-      await createRecruitCandidate(accessToken, data);
+      const candidateId = await createRecruitCandidate(accessToken, fields);
+      const cvFile = formData.get("cv");
+      if (candidateId && cvFile instanceof File && cvFile.size > 0) {
+        await uploadCvToRecruit(accessToken, candidateId, cvFile);
+      }
     }
   } catch {
-    // Non-fatal — submission still acknowledged
+    // Non-fatal
   }
 
   return NextResponse.json({ ok: true });

@@ -25,15 +25,12 @@ export default function CarriersPage() {
     e.preventDefault();
     setFormStatus("sending");
     const form = e.currentTarget;
-    const data = Object.fromEntries(
-      Array.from(new FormData(form)).filter(([, v]) => typeof v === "string")
-    ) as Record<string, string>;
+    const formData = new FormData(form);
 
     try {
       const res = await fetch("/api/careers", {
         method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(data),
+        body: formData,
       });
       if (res.ok) {
         setFormStatus("sent");

@@ -112,6 +112,16 @@ export default async function LocaleLayout({
         inLanguage: ["fr-FR", "en"],
         publisher: { "@id": `${SITE.url}/#organization` },
       },
+      {
+        "@type": "WebPage",
+        "@id": `${SITE.url}/${locale}/#webpage`,
+        url: `${SITE.url}/${locale}`,
+        isPartOf: { "@id": `${SITE.url}/#website` },
+        speakable: {
+          "@type": "SpeakableSpecification",
+          cssSelector: [".speakable", "h1", "h2"],
+        },
+      },
     ],
   };
 

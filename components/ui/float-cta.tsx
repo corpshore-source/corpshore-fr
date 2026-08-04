@@ -24,7 +24,7 @@ export function FloatCta() {
       }`}
     >
       <Link
-        href="/contact"
+        href="/devis"
         className="flex items-center gap-2 bg-[var(--color-vermeil-500)] hover:bg-[var(--color-vermeil-600)] text-white px-5 py-3 rounded-full shadow-xl font-semibold text-sm transition-colors"
       >
         📋 {label}

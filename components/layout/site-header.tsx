@@ -1,15 +1,17 @@
 "use client";
 import { useState, useEffect } from "react";
-import { useTranslations } from "next-intl";
+import { useTranslations, useLocale } from "next-intl";
 import { Link, usePathname } from "@/i18n/navigation";
 import { LocaleSwitcher } from "./locale-switcher";
 import { buttonVariants } from "@/components/ui/button";
+import { CalendlyButton } from "@/components/ui/calendly-button";
 import { cn } from "@/lib/utils";
 import { Menu, X } from "lucide-react";
 import Image from "next/image";
 
 export function SiteHeader() {
   const t = useTranslations("Nav");
+  const locale = useLocale();
   const pathname = usePathname();
   const [scrolled, setScrolled] = useState(false);
   const [open, setOpen] = useState(false);
@@ -100,7 +102,13 @@ export function SiteHeader() {
             {/* Right actions */}
             <div className="hidden lg:flex items-center gap-2 ml-auto">
               <LocaleSwitcher />
-              <Link href="/contact" className={buttonVariants({ variant: "primary", size: "sm" })}>
+              <CalendlyButton
+                label={locale === "fr" ? "Réserver un appel" : "Book a call"}
+                variant="outline"
+                size="sm"
+                icon={false}
+              />
+              <Link href="/devis" className={buttonVariants({ variant: "primary", size: "sm" })}>
                 {t("quote")}
               </Link>
             </div>
@@ -133,8 +141,14 @@ export function SiteHeader() {
             ))}
             <div className="pt-6 flex flex-col gap-3">
               <LocaleSwitcher className="w-full justify-center" />
+              <CalendlyButton
+                label={locale === "fr" ? "Réserver un appel découverte" : "Book a discovery call"}
+                variant="outline"
+                size="lg"
+                className="w-full justify-center"
+              />
               <Link
-                href="/contact"
+                href="/devis"
                 className={cn(buttonVariants({ variant: "primary", size: "lg" }), "w-full")}
               >
                 {t("quote")}
