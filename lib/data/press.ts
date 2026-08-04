@@ -35,28 +35,6 @@ export const pressReleases: PressRelease[] = [
     ],
   },
   {
-    id: "PR-FR-02",
-    slug: "hub-dakar-senegal-livraison-francophone",
-    title: "Corpshore ouvre un hub de livraison francophone au Sénégal",
-    titleEn: "Corpshore opens a Francophone delivery hub in Senegal",
-    category: "Expansion",
-    date: "2026-03-15",
-    lead: "Corpshore annonce l'ouverture de son douzième hub de livraison mondial à Dakar (Sénégal), dédié aux services en langue française. Ce hub opère immédiatement avec 80 agents bilingues et a vocation à atteindre 350 postes d'ici fin 2026.",
-    leadEn: "Corpshore announces the opening of its twelfth global delivery hub in Dakar (Senegal), dedicated to French-language services. This hub immediately operates with 80 bilingual agents and is expected to reach 350 positions by end of 2026.",
-    body: [
-      "Corpshore Solutions Corporation annonce aujourd'hui l'ouverture de son hub de livraison de Dakar, sa quatrième implantation en Afrique subsaharienne francophone après Abidjan, Antananarivo et Ouagadougou. Situé dans la Zone Économique Spéciale de Dakar, le hub bénéficie d'une infrastructure télécom de premier plan et d'accès à l'un des viviers de talents francophones les plus denses d'Afrique de l'Ouest.",
-      "Le hub de Dakar est conçu pour offrir des services BPO de service client, de back-office administratif et de modération de contenu en langue française. Les 80 agents initiaux ont été sélectionnés parmi plus de 1 200 candidats et ont tous reçu une certification Corpshore de 8 semaines couvrant le français professionnel (niveau DALF C1), les procédures qualité ISO 9001 et les protocoles RGPD applicables aux traitements pour le compte de clients de l'Union européenne.",
-      "« Le Sénégal représente le meilleur écosystème BPO d'Afrique de l'Ouest : gouvernance stable, infrastructure moderne, université forte et culture du service client professionnel. Dakar est la pièce maîtresse de notre stratégie africaine francophone », indique la direction de Corpshore.",
-      "Le hub de Dakar a vocation à atteindre 350 postes d'ici fin 2026 et 600 postes d'ici fin 2027. Il accueillera également un centre de formation Corpshore Africa ouvert aux partenaires locaux, avec pour ambition de contribuer à la professionnalisation de l'écosystème BPO sénégalais et à la création d'emplois qualifiés pour les jeunes diplômés dakarois.",
-    ],
-    bodyEn: [
-      "Corpshore Solutions Corporation today announces the opening of its Dakar delivery hub, its fourth location in Francophone sub-Saharan Africa after Abidjan, Antananarivo and Ouagadougou. Located in the Dakar Special Economic Zone, the hub benefits from world-class telecom infrastructure and access to one of West Africa's densest Francophone talent pools.",
-      "The Dakar hub is designed to provide BPO services in customer service, administrative back-office and French-language content moderation. The 80 initial agents were selected from over 1,200 candidates and all received an 8-week Corpshore certification covering professional French (DALF C1 level), ISO 9001 quality procedures and GDPR protocols applicable to processing for EU clients.",
-      "\"Senegal represents the best BPO ecosystem in West Africa: stable governance, modern infrastructure, strong university sector and a culture of professional customer service. Dakar is the centrepiece of our Francophone African strategy,\" says Corpshore's leadership.",
-      "The Dakar hub is expected to reach 350 positions by end of 2026 and 600 positions by end of 2027. It will also host a Corpshore Africa training centre open to local partners, aiming to contribute to the professionalisation of the Senegalese BPO ecosystem and the creation of skilled jobs for Dakar's young graduates.",
-    ],
-  },
-  {
     id: "PR-FR-03",
     slug: "francai-suite-ia-bpo-francophone",
     title: "Corpshore AI lance une suite d'automatisation dédiée aux processus francophones",

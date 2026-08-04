@@ -28,7 +28,7 @@ export const blogPosts: BlogPost[] = [
     category: "Guide", categoryEn: "Guide",
     excerpt: "Tout ce que les DSI et DAF français doivent savoir avant de signer un contrat d'externalisation : conformité RGPD, benchmarks tarifaires, clauses essentielles et pièges à éviter.",
     excerptEn: "Everything French CIOs and CFOs need to know before signing an outsourcing contract: GDPR compliance, pricing benchmarks, essential clauses and pitfalls to avoid.",
-    date: "2026-07-15", readTime: 12, image: "paris-la-defense-business.webp",
+    date: "2026-07-15", readTime: 2, image: "paris-la-defense-business.webp",
     slug: "guide-externalisation-bpo-france",
     content: [
       { type: "h2", text: "Qu'est-ce que le BPO et pourquoi l'adopter en France ?" },
@@ -106,7 +106,7 @@ export const blogPosts: BlogPost[] = [
     category: "Réglementation", categoryEn: "Regulation",
     excerpt: "Analyse des dernières directives de la CNIL et de la Commission européenne sur les transferts de données hors UE dans le cadre de l'externalisation.",
     excerptEn: "Analysis of the latest CNIL and European Commission guidelines on data transfers outside the EU in the context of outsourcing.",
-    date: "2026-07-01", readTime: 8, image: "cf-rgpd-compliance.png",
+    date: "2026-07-01", readTime: 2, image: "cf-rgpd-compliance.png",
     slug: "rgpd-2026-externalisation-france",
     content: [
       { type: "h2", text: "Les évolutions réglementaires de 2026" },
@@ -152,7 +152,7 @@ export const blogPosts: BlogPost[] = [
     category: "Expertise", categoryEn: "Expertise",
     excerpt: "De la rédaction du cahier des charges à la gouvernance des SLA, les erreurs les plus coûteuses observées dans 200+ projets d'externalisation IT pour des clients français.",
     excerptEn: "From drafting the specification to SLA governance, the most costly mistakes observed in 200+ IT outsourcing projects for French clients.",
-    date: "2026-06-20", readTime: 10, image: "cf-it-outsourcing.png",
+    date: "2026-06-20", readTime: 2, image: "cf-it-outsourcing.png",
     slug: "externalisation-it-france-erreurs",
     content: [
       { type: "h2", text: "Erreur 1 : un cahier des charges incomplet ou trop vague" },
@@ -200,7 +200,7 @@ export const blogPosts: BlogPost[] = [
     category: "IA & Innovation", categoryEn: "AI & Innovation",
     excerpt: "Étude de marché sur l'adoption de l'IA générative dans les centres de contacts et les opérations back-office francophones.",
     excerptEn: "Market study on the adoption of generative AI in Francophone contact centres and back-office operations.",
-    date: "2026-06-10", readTime: 9, image: "cf-ai-bpo-innovation-lab.png",
+    date: "2026-06-10", readTime: 2, image: "cf-ai-bpo-innovation-lab.png",
     slug: "ia-generative-bpo-francophone",
     content: [
       { type: "h2", text: "L'IA générative : état des lieux dans le BPO francophone" },
@@ -246,7 +246,7 @@ export const blogPosts: BlogPost[] = [
     category: "Stratégie", categoryEn: "Strategy",
     excerpt: "Comparatif détaillé des trois modèles d'externalisation avec données de coûts réels, délais, qualité et risques pour les entreprises basées en France.",
     excerptEn: "Detailed comparison of the three outsourcing models with real cost data, timelines, quality and risk analysis for French-based companies.",
-    date: "2026-05-28", readTime: 11, image: "cf-offshore-nearshore-onshore-map.png",
+    date: "2026-05-28", readTime: 2, image: "cf-offshore-nearshore-onshore-map.png",
     slug: "offshore-nearshore-onshore-france-2026",
     content: [
       { type: "h2", text: "Définitions et périmètres" },
@@ -288,7 +288,7 @@ export const blogPosts: BlogPost[] = [
     category: "Secteur Public", categoryEn: "Public Sector",
     excerpt: "Les exigences spécifiques du secteur public français pour l'externalisation : qualification ANSSI, certification HDS, marchés UGAP et cadre de la loi LCEN.",
     excerptEn: "The specific requirements of the French public sector for outsourcing: ANSSI qualification, HDS certification, UGAP procurement and LCEN legal framework.",
-    date: "2026-05-15", readTime: 13, image: "secteur-public-digitalisation.webp",
+    date: "2026-05-15", readTime: 2, image: "secteur-public-digitalisation.webp",
     slug: "externalisation-secteur-public-france",
     content: [
       { type: "h2", text: "Les spécificités réglementaires du secteur public" },
@@ -330,7 +330,7 @@ export const blogPosts: BlogPost[] = [
     category: "Service Client", categoryEn: "Customer Service",
     excerpt: "Analyse de CSAT, FCR et coûts par contact entre modèle interne et modèle externalisé pour 45 e-commerçants français ayant opéré les deux.",
     excerptEn: "CSAT, FCR and cost-per-contact analysis comparing in-house vs outsourced models for 45 French e-commerce operators who ran both.",
-    date: "2026-05-02", readTime: 8, image: "agent-support-francophone.webp",
+    date: "2026-05-02", readTime: 2, image: "agent-support-francophone.webp",
     slug: "service-client-multicanal-ecommerce-france",
     content: [
       { type: "h2", text: "Les chiffres : modèle interne vs externalisé" },
@@ -372,7 +372,7 @@ export const blogPosts: BlogPost[] = [
     category: "RH", categoryEn: "HR",
     excerpt: "Couverture complète de l'externalisation RH en France : paie, recrutement, formation, administration du personnel — avec benchmarks de coûts et délais.",
     excerptEn: "Full coverage of HR outsourcing in France: payroll, recruitment, training, HR administration — with cost and lead-time benchmarks.",
-    date: "2026-04-18", readTime: 10, image: "cf-hr-outsourcing.png",
+    date: "2026-04-18", readTime: 2, image: "cf-hr-outsourcing.png",
     slug: "rh-externalisee-france-2026",
     content: [
       { type: "h2", text: "Pourquoi externaliser la RH en France ?" },
@@ -412,7 +412,7 @@ export const blogPosts: BlogPost[] = [
     category: "Finance", categoryEn: "Finance",
     excerpt: "Guide pratique pour externaliser la fonction finance tout en maintenant la conformité au Plan Comptable Général et aux normes IFRS, avec SLAs types.",
     excerptEn: "Practical guide to outsourcing the finance function while maintaining compliance with the French General Accounting Plan and IFRS standards, with typical SLAs.",
-    date: "2026-04-05", readTime: 9, image: "cf-finance-accounting.png",
+    date: "2026-04-05", readTime: 2, image: "cf-finance-accounting.png",
     slug: "finance-comptabilite-externalisees-france",
     content: [
       { type: "h2", text: "L'externalisation finance-comptabilité : périmètre et enjeux" },
@@ -454,7 +454,7 @@ export const blogPosts: BlogPost[] = [
     category: "Sécurité", categoryEn: "Security",
     excerpt: "Comment les prestataires BPO doivent se conformer aux recommandations de l'ANSSI : SecNumCloud, EBIOS RM, tests d'intrusion et plan de continuité.",
     excerptEn: "How BPO providers must comply with ANSSI recommendations: SecNumCloud, EBIOS RM, penetration testing and business continuity planning.",
-    date: "2026-03-22", readTime: 11, image: "cf-cybersecurity-anssi.png",
+    date: "2026-03-22", readTime: 2, image: "cf-cybersecurity-anssi.png",
     slug: "securite-donnees-bpo-anssi-france",
     content: [
       { type: "h2", text: "Pourquoi la sécurité est un différenciateur en BPO" },
@@ -502,7 +502,7 @@ export const blogPosts: BlogPost[] = [
     category: "Marché", categoryEn: "Market",
     excerpt: "Notre analyse du marché français de l'externalisation : volumes, segments en croissance, consolidations attendues et émergence des hubs subsahariens.",
     excerptEn: "Our analysis of the French outsourcing market: volumes, growing segments, expected consolidations and emergence of sub-Saharan hubs.",
-    date: "2026-03-10", readTime: 10, image: "corpshore-global-map.webp",
+    date: "2026-03-10", readTime: 2, image: "corpshore-global-map.webp",
     slug: "tendances-bpo-france-2026",
     content: [
       { type: "h2", text: "Le marché BPO français en chiffres" },
@@ -546,7 +546,7 @@ export const blogPosts: BlogPost[] = [
     category: "Guide", categoryEn: "Guide",
     excerpt: "Modèle complet de cahier des charges pour un appel d'offres BPO ou IT en France : périmètre, SLA, RGPD, gouvernance, indicateurs de performance et pénalités.",
     excerptEn: "Complete specification template for a BPO or IT tender in France: scope, SLAs, GDPR, governance, performance indicators and penalties.",
-    date: "2026-02-25", readTime: 7, image: "equipe-teletravail-francophonie.webp",
+    date: "2026-02-25", readTime: 2, image: "equipe-teletravail-francophonie.webp",
     slug: "cahier-charges-externalisation-france",
     content: [
       { type: "h2", text: "La structure d'un cahier des charges BPO en 8 sections" },
@@ -594,7 +594,7 @@ export const blogPosts: BlogPost[] = [
     category: "Hubs & Géographie", categoryEn: "Hubs & Geography",
     excerpt: "Analyse comparative des hubs francophones : Sénégal, Maroc, Madagascar, Côte d'Ivoire vs. Philippines et Pologne pour les services en langue française.",
     excerptEn: "Comparative analysis of Francophone hubs: Senegal, Morocco, Madagascar, Ivory Coast vs. Philippines and Poland for French-language services.",
-    date: "2026-02-10", readTime: 9, image: "recrutement-teletravail-france.webp",
+    date: "2026-02-10", readTime: 2, image: "recrutement-teletravail-france.webp",
     slug: "externalisation-francaise-afrique-subsaharienne",
     content: [
       { type: "h2", text: "Pourquoi l'Afrique subsaharienne s'impose" },
@@ -636,7 +636,7 @@ export const blogPosts: BlogPost[] = [
     category: "Trust & Safety", categoryEn: "Trust & Safety",
     excerpt: "Avec l'entrée en vigueur du Digital Services Act, les plateformes européennes doivent renforcer leur modération. Comment externaliser efficacement la modération francophone ?",
     excerptEn: "With the Digital Services Act in force, European platforms must strengthen their moderation. How to effectively outsource Francophone content moderation?",
-    date: "2026-01-28", readTime: 8, image: "ai-annotation-equipe.webp",
+    date: "2026-01-28", readTime: 2, image: "ai-annotation-equipe.webp",
     slug: "moderation-contenu-francais-dsa",
     content: [
       { type: "h2", text: "Le DSA et ses nouvelles obligations de modération" },
@@ -678,7 +678,7 @@ export const blogPosts: BlogPost[] = [
     category: "Actualité", categoryEn: "News",
     excerpt: "Décryptage de la méthodologie d'Outsource Accelerator qui a classé Corpshore en tête du classement BPO France 2026 : critères évalués, processus de vérification et ce que cela signifie pour nos clients.",
     excerptEn: "Breaking down the Outsource Accelerator methodology that ranked Corpshore at the top of the 2026 France BPO ranking: criteria evaluated, verification process and what it means for our clients.",
-    date: "2026-01-15", readTime: 6, image: "hero-paris-operations.webp",
+    date: "2026-01-15", readTime: 2, image: "hero-paris-operations.webp",
     slug: "oa-corpshore-1-bpo-france-methodologie",
     content: [
       { type: "h2", text: "Qui est Outsource Accelerator ?" },
@@ -722,7 +722,7 @@ export const blogPosts: BlogPost[] = [
     category: "Expansion", categoryEn: "Expansion",
     excerpt: "Corpshore annonce l'ouverture de son hub technologique à Tachkent, la capitale de l'Ouzbékistan, pour couvrir les marchés d'Asie centrale, de Russie et d'Europe de l'Est avec des équipes IT et IA plurilingues.",
     excerptEn: "Corpshore announces the opening of its technology hub in Tashkent, capital of Uzbekistan, to serve Central Asian, Russian and Eastern European markets with multilingual IT and AI teams.",
-    date: "2026-03-20", readTime: 7, image: "corpshore-global-map.webp",
+    date: "2026-03-20", readTime: 3, image: "corpshore-global-map.webp",
     slug: "corpshore-hub-tachkent-ouzbekistan",
     content: [
       { type: "h2", text: "Pourquoi Tachkent ?" },
