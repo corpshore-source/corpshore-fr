@@ -1,6 +1,7 @@
 "use client";
 import { useState, useMemo } from "react";
 import Image from "next/image";
+import NextLink from "next/link";
 import type { BlogPost } from "@/lib/data/blog";
 
 interface BlogGridProps {
@@ -55,38 +56,46 @@ export function BlogGrid({ posts, locale, readTimeLabel, readMoreLabel }: BlogGr
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
         {filtered.map(post => {
           const imgSrc = `/images/${post.image}`;
+          const href = `/${locale}/blog/${post.slug}`;
           return (
-            <article key={post.id} className="card-base flex flex-col overflow-hidden">
-              <div className="relative h-44 overflow-hidden bg-[var(--color-calcaire)]">
-                <Image src={imgSrc} alt="" fill className="object-cover" />
-              </div>
-              <div className="p-5 flex flex-col flex-1">
-                <div className="flex items-center gap-2 mb-3">
-                  <span className="sector-badge">{isFr ? post.category : post.categoryEn}</span>
-                  <span className="text-xs text-[var(--color-granit)]">
-                    {post.readTime} {readTimeLabel}
-                  </span>
+            <NextLink key={post.id} href={href} className="card-base flex flex-col overflow-hidden group hover:shadow-md transition-shadow">
+              <article>
+                <div className="relative h-44 overflow-hidden bg-[var(--color-calcaire)]">
+                  <Image
+                    src={imgSrc}
+                    alt=""
+                    fill
+                    className="object-cover group-hover:scale-[1.03] transition-transform duration-300"
+                  />
                 </div>
-                <h3 className="text-base leading-snug mb-3 flex-1">
-                  {isFr ? post.title : post.titleEn}
-                </h3>
-                <p className="text-sm text-[var(--color-granit)] leading-relaxed mb-4 line-clamp-3">
-                  {isFr ? post.excerpt : post.excerptEn}
-                </p>
-                <div className="flex items-center justify-between mt-auto pt-4 border-t border-[var(--color-border)]">
-                  <time className="text-xs text-[var(--color-granit)]">
-                    {new Date(post.date).toLocaleDateString(isFr ? "fr-FR" : "en-GB", {
-                      day: "numeric",
-                      month: "long",
-                      year: "numeric",
-                    })}
-                  </time>
-                  <span className="text-xs font-semibold text-[var(--color-marine-800)]">
-                    {readMoreLabel} →
-                  </span>
+                <div className="p-5 flex flex-col flex-1">
+                  <div className="flex items-center gap-2 mb-3">
+                    <span className="sector-badge">{isFr ? post.category : post.categoryEn}</span>
+                    <span className="text-xs text-[var(--color-granit)]">
+                      {post.readTime} {readTimeLabel}
+                    </span>
+                  </div>
+                  <h3 className="text-base leading-snug mb-3 flex-1 group-hover:text-[var(--color-marine-700)] transition-colors">
+                    {isFr ? post.title : post.titleEn}
+                  </h3>
+                  <p className="text-sm text-[var(--color-granit)] leading-relaxed mb-4 line-clamp-3">
+                    {isFr ? post.excerpt : post.excerptEn}
+                  </p>
+                  <div className="flex items-center justify-between mt-auto pt-4 border-t border-[var(--color-border)]">
+                    <time className="text-xs text-[var(--color-granit)]">
+                      {new Date(post.date).toLocaleDateString(isFr ? "fr-FR" : "en-GB", {
+                        day: "numeric",
+                        month: "long",
+                        year: "numeric",
+                      })}
+                    </time>
+                    <span className="text-xs font-semibold text-[var(--color-marine-800)] group-hover:underline">
+                      {readMoreLabel} →
+                    </span>
+                  </div>
                 </div>
-              </div>
-            </article>
+              </article>
+            </NextLink>
           );
         })}
       </div>
