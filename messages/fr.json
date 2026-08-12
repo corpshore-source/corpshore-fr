@@ -21,32 +21,32 @@
     "hero": {
       "badge": "🏆 #1 BPO en France · Outsource Accelerator 2026",
       "h1": "La référence mondiale en externalisation au service de la France.",
-      "sub": "BPO, IT, IA et RH externalisés pour les entreprises françaises et francophones. 18 pays, 35 langues, 10 ans d'excellence.",
+      "sub": "BPO, IT, IA et RH externalisés pour les entreprises françaises et francophones. 18 pays, 35 langues, 10 ans d’excellence.",
       "cta1": "Demander un devis gratuit",
       "cta2": "Voir nos références"
     },
     "trust": {
       "countries": "pays",
       "languages": "langues",
-      "years": "ans d'expérience",
+      "years": "ans d’expérience",
       "clients": "clients servis",
       "ranking": "OA #1 France 2026"
     },
     "why": {
       "label": "Pourquoi Corpshore",
-      "h2": "Le standard mondial de l'externalisation francophone.",
-      "sub": "Aucun autre prestataire BPO ne combine l'expertise francophone native, l'infrastructure de livraison mondiale et la conformité réglementaire à cette échelle.",
+      "h2": "Le standard mondial de l’externalisation francophone.",
+      "sub": "Aucun autre prestataire BPO ne combine l’expertise francophone native, l’infrastructure de livraison mondiale et la conformité réglementaire à cette échelle.",
       "expertise": { "title": "Expertise francophone native", "body": "Tous les travaux en langue française sont réalisés par des locuteurs natifs. Nos agents, développeurs et juristes maîtrisent les standards culturels et réglementaires français." },
       "network": { "title": "Réseau de livraison mondial", "body": "11 hubs sur 4 continents : Amériques, Europe, Afrique, Asie. Choisissez le bon hub selon votre budget, fuseau horaire et exigences linguistiques." },
-      "ai": { "title": "Opérations augmentées par l'IA", "body": "Corpshore AI déploie des pipelines NLP, RPA et IA générative pour réduire les délais de traitement et améliorer la qualité sur toutes les lignes de service." },
+      "ai": { "title": "Opérations augmentées par l’IA", "body": "Corpshore AI déploie des pipelines NLP, RPA et IA générative pour réduire les délais de traitement et améliorer la qualité sur toutes les lignes de service." },
       "rgpd": { "title": "Conformité RGPD & réglementaire", "body": "RGPD intégral, protocoles sécurité ANSSI, certification HDS pour les données de santé et conformité AMF/ACPR pour les services financiers." },
-      "ramp": { "title": "Démarrage rapide", "body": "Équipes opérationnelles déployées en 4 à 6 semaines. Scalable de 5 à 500+ agents sans frais cachés ni engagement d'infrastructure." },
+      "ramp": { "title": "Démarrage rapide", "body": "Équipes opérationnelles déployées en 4 à 6 semaines. Scalable de 5 à 500+ agents sans frais cachés ni engagement d’infrastructure." },
       "sla": { "title": "Performance contractualisée", "body": "SLA contractuels sur CSAT, AHT et QA. Rapports mensuels, chef de projet dédié et revues exécutives trimestrielles." }
     },
     "rankings": {
       "label": "Classements vérifiés",
       "h2": "Classé indépendamment. Leader constant.",
-      "source": "Classements issus d'outsourceaccelerator.com, le premier annuaire BPO mondial.",
+      "source": "Classements issus d’outsourceaccelerator.com, le premier annuaire BPO mondial.",
       "r1": "#1 BPO en France",
       "r1sub": "Outsource Accelerator 2026, Top 30 BPO en France",
       "r2": "#2 BPO en Europe",
@@ -61,7 +61,7 @@
       "it": { "title": "IT & Développement", "body": "Équipes offshore dédiées, développement web/mobile full-stack, migration cloud, intégration API et support technique." },
       "ai": { "title": "Corpshore AI", "body": "Automatisation IA, NLP, labellisation de données, développement chatbot, RPA et intégration IA générative pour les workflows enterprise." },
       "hr": { "title": "RH Externalisée", "body": "Acquisition de talents, onboarding, traitement de paie, Employer of Record (EOR) et conformité droit social français." },
-      "finance": { "title": "Finance & Comptabilité", "body": "Comptes fournisseurs/clients, reporting financier, comptabilité PCG, support trésorerie et préparation d'audit." },
+      "finance": { "title": "Finance & Comptabilité", "body": "Comptes fournisseurs/clients, reporting financier, comptabilité PCG, support trésorerie et préparation d’audit." },
       "cx": { "title": "Service Client", "body": "Support client multicanal en français : téléphone, email, chat et réseaux sociaux, avec SLA CSAT contractuels." }
     },
     "hubs": {
@@ -95,18 +95,18 @@
     "hero": {
       "label": "Secteurs",
       "h1": "Une expertise sectorielle prouvée en France.",
-      "sub": "Chaque secteur impose ses contraintes réglementaires, ses usages culturels et ses indicateurs de performance. Notre approche s'adapte à votre secteur, pas l'inverse."
+      "sub": "Chaque secteur impose ses contraintes réglementaires, ses usages culturels et ses indicateurs de performance. Notre approche s’adapte à votre secteur, pas l’inverse."
     }
   },
   "About": {
     "meta": {
       "title": "À Propos — Corpshore France",
-      "description": "L'histoire et la mission de Corpshore France : 10 ans d'externalisation francophone, 18 pays, 11 hubs et le classement #1 BPO en France."
+      "description": "L’histoire et la mission de Corpshore France : 10 ans d’externalisation francophone, 18 pays, 11 hubs et le classement #1 BPO en France."
     },
     "hero": {
       "label": "À Propos",
       "h1": "Bâtis en France. Opérants partout.",
-      "sub": "Corpshore France n'est pas un prestataire généraliste. Nous sommes spécialistes de l'externalisation pour les marchés français et francophones, avec les standards de qualité que ces marchés exigent."
+      "sub": "Corpshore France n’est pas un prestataire généraliste. Nous sommes spécialistes de l’externalisation pour les marchés français et francophones, avec les standards de qualité que ces marchés exigent."
     }
   },
   "Careers": {
@@ -136,7 +136,7 @@
       "poste": "Poste souhaité",
       "cv": "CV (PDF, DOC, DOCX, max 5 Mo)",
       "lettre": "Lettre de motivation",
-      "rgpd": "J'accepte que mes données soient traitées par Corpshore France conformément au RGPD.",
+      "rgpd": "J’accepte que mes données soient traitées par Corpshore France conformément au RGPD.",
       "submit": "Envoyer ma candidature",
       "spontanee": "Candidature spontanée"
     }
@@ -144,14 +144,14 @@
   "Blog": {
     "meta": {
       "title": "Blog & Insights — BPO, IT & IA en France",
-      "description": "Articles, guides et analyses sur l'externalisation BPO, l'infogérance IT, l'IA générative et le marché français. Corpshore France, #1 BPO en France."
+      "description": "Articles, guides et analyses sur l’externalisation BPO, l’infogérance IT, l’IA générative et le marché français. Corpshore France, #1 BPO en France."
     },
     "hero": {
       "label": "Blog & Insights",
-      "h1": "Analyses et guides sur l'externalisation en France.",
-      "sub": "Articles de fond sur le marché BPO français, la réglementation RGPD, l'intelligence artificielle et les tendances de l'externalisation francophone."
+      "h1": "Analyses et guides sur l’externalisation en France.",
+      "sub": "Articles de fond sur le marché BPO français, la réglementation RGPD, l’intelligence artificielle et les tendances de l’externalisation francophone."
     },
-    "readMore": "Lire l'article",
+    "readMore": "Lire l’article",
     "readTime": "min de lecture",
     "press": {
       "label": "Communiqués de presse",
@@ -166,7 +166,7 @@
     "hero": {
       "label": "Études de Cas",
       "h1": "15 références clients. Des résultats mesurables.",
-      "sub": "De la banque CAC 40 à la fintech régulée, du secteur public à l'ONG internationale : nos résultats sont vérifiables et nos engagements contractuels. Noms de clients anonymisés (NDA)."
+      "sub": "De la banque CAC 40 à la fintech régulée, du secteur public à l’ONG internationale : nos résultats sont vérifiables et nos engagements contractuels. Noms de clients anonymisés (NDA)."
     },
     "metrics": {
       "csat": "CSAT +22%",
@@ -180,7 +180,7 @@
       "capacity": "+270%",
       "capacityLabel": "Capacité Retail"
     },
-    "readCase": "Lire l'étude"
+    "readCase": "Lire l’étude"
   },
   "Contact": {
     "meta": {
@@ -190,7 +190,7 @@
     "hero": {
       "label": "Contact",
       "h1": "Contactez Corpshore France.",
-      "sub": "Un consultant vous répond sous 24 heures ouvrables pour analyser vos besoins et vous proposer une solution d'externalisation adaptée."
+      "sub": "Un consultant vous répond sous 24 heures ouvrables pour analyser vos besoins et vous proposer une solution d’externalisation adaptée."
     },
     "form": {
       "nom": "Nom",
@@ -201,7 +201,7 @@
       "pays": "Pays",
       "service": "Service souhaité",
       "message": "Message",
-      "rgpd": "J'accepte que mes données soient traitées par Corpshore France conformément au RGPD.",
+      "rgpd": "J’accepte que mes données soient traitées par Corpshore France conformément au RGPD.",
       "submit": "Envoyer ma demande",
       "required": "Champs obligatoires"
     },
