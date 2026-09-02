@@ -15,7 +15,27 @@ import { ModelComparator } from "@/components/tools/model-comparator";
 import { ReadinessQuiz } from "@/components/tools/readiness-quiz";
 import { HomeFaq } from "@/components/home/home-faq";
 import { SITE } from "@/lib/site";
-import { pageAlternates, KEYWORDS } from "@/lib/seo";
+import { KEYWORDS } from "@/lib/seo";
+
+const CROSS_DOMAIN_HREFLANG: Record<string, string> = {
+  "x-default": "https://corpshore.ai",
+  en: "https://corpshore.ai",
+  ja: "https://corpshore.ai/ja",
+  ko: "https://corpshore.ai/ko",
+  zh: "https://corpshore.ai/zh",
+  "de-DE": "https://corpshore.de",
+  "en-DE": "https://corpshore.de/en",
+  fr: "https://corpshore.fr/fr",
+  "en-FR": "https://corpshore.fr/en",
+  es: "https://corpshore.co/es",
+  "en-CO": "https://corpshore.co/en",
+  tr: "https://corpshore.tr",
+  "en-TR": "https://corpshore.tr/en",
+  pl: "https://corpshore.pl/pl",
+  "en-PL": "https://corpshore.pl/en",
+  ar: "https://corpshore.ae/ar",
+  "en-AE": "https://corpshore.ae",
+};
 
 export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }): Promise<Metadata> {
   const { locale } = await params;
@@ -26,7 +46,10 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
     title,
     description,
     keywords: KEYWORDS.home[locale as "fr" | "en"],
-    alternates: pageAlternates("/"),
+    alternates: {
+      canonical: locale === "en" ? "https://corpshore.fr/en" : "https://corpshore.fr/fr",
+      languages: CROSS_DOMAIN_HREFLANG,
+    },
     openGraph: { title, description, url: `${SITE.url}/${locale}` },
   };
 }
