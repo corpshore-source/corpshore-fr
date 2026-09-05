@@ -2,7 +2,25 @@ import { NextRequest, NextResponse } from "next/server";
 
 async function verifyTurnstile(token: string): Promise<boolean> {
   const secret = process.env.TURNSTILE_SECRET_KEY;
-  if (!secret) return true; // skip in dev if not set
+  /**
+   * Fail closed in production, open everywhere else.
+   *
+   * `return true` was the old behaviour and it is the wrong one here. The site
+   * key is hardcoded in the pages, so the widget always renders and visitors
+   * are always challenged; accepting a submission that nothing verified turns
+   * that challenge into theatre, and the form reads as protected while being
+   * wide open. Refusing is worse for one honest visitor and better than the
+   * alternative, which is not knowing.
+   *
+   * Outside production there is no secret to expect, so the form still works
+   * locally and on previews.
+   */
+  if (!secret) {
+    const production = process.env.VERCEL_ENV
+      ? process.env.VERCEL_ENV === "production"
+      : process.env.NODE_ENV === "production";
+    return !production;
+  }
 
   const res = await fetch("https://challenges.cloudflare.com/turnstile/v0/siteverify", {
     method: "POST",
