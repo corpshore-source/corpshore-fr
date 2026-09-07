@@ -243,15 +243,20 @@
       "bpo": "BPO",
       "it": "IT Outsourcing",
       "ai": "Corpshore AI",
+      "hr": "HR Outsourcing",
       "finance": "Finance & Accounting",
+      "cx": "Customer Service",
       "about": "About",
       "cases": "Case Studies",
       "blog": "Blog",
       "careers": "Careers",
+      "villes": "BPO by city",
       "global": "Corpshore Global",
       "legal": "Legal notices",
       "rgpd": "Privacy policy",
-      "contact": "Contact"
+      "contact": "Contact",
+      "quote": "Free Quote",
+      "book": "Book a Call"
     }
   }
 }

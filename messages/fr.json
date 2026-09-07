@@ -243,15 +243,20 @@
       "bpo": "BPO",
       "it": "Externalisation IT",
       "ai": "Corpshore AI",
+      "hr": "RH externalisée",
       "finance": "Finance & Comptabilité",
+      "cx": "Service Client",
       "about": "À Propos",
       "cases": "Études de Cas",
       "blog": "Blog",
       "careers": "Carrières",
+      "villes": "BPO par ville",
       "global": "Corpshore Global",
       "legal": "Mentions légales",
       "rgpd": "Politique RGPD",
-      "contact": "Contact"
+      "contact": "Contact",
+      "quote": "Devis gratuit",
+      "book": "Réserver un appel"
     }
   }
 }

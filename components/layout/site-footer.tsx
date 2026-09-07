@@ -56,7 +56,7 @@ export function SiteFooter() {
           <div>
             <h3 className="text-sm font-semibold text-white mb-4">{t("services")}</h3>
             <ul className="space-y-2.5 text-sm text-white/60">
-              {["bpo", "it", "ai", "finance"].map((k) => (
+              {(["bpo", "it", "ai", "hr", "finance", "cx"] as const).map((k) => (
                 <li key={k}>
                   <Link href="/services" className="hover:text-white transition-colors">
                     {t(`links.${k}`)}
@@ -74,6 +74,7 @@ export function SiteFooter() {
               <li><Link href="/etudes-de-cas" className="hover:text-white transition-colors">{t("links.cases")}</Link></li>
               <li><Link href="/blog" className="hover:text-white transition-colors">{t("links.blog")}</Link></li>
               <li><Link href="/carrieres" className="hover:text-white transition-colors">{t("links.careers")}</Link></li>
+              <li><Link href="/villes" className="hover:text-white transition-colors">{t("links.villes")}</Link></li>
               <li>
                 <a href={SITE.globalUrl} target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors">
                   {t("links.global")} ↗
@@ -89,10 +90,10 @@ export function SiteFooter() {
               <li><Link href="/mentions-legales" className="hover:text-white transition-colors">{t("links.legal")}</Link></li>
               <li><Link href={{ pathname: "/mentions-legales", hash: "s2" }} className="hover:text-white transition-colors">{t("links.rgpd")}</Link></li>
               <li><Link href="/contact" className="hover:text-white transition-colors">{nav("contact")}</Link></li>
-              <li><Link href="/devis" className="hover:text-white transition-colors text-[var(--color-or-400)]">Demande de devis ↗</Link></li>
+              <li><Link href="/devis" className="hover:text-white transition-colors text-[var(--color-or-400)]">{t("links.quote")} ↗</Link></li>
             </ul>
             <CalendlyButton
-              label="Réserver un appel"
+              label={t("links.book")}
               variant="onDark"
               size="sm"
               className="w-full justify-center"
@@ -105,7 +106,7 @@ export function SiteFooter() {
           <span>{t("copyright")}</span>
           <div className="flex gap-6">
             <Link href="/mentions-legales" className="hover:text-white/70 transition-colors">{t("links.legal")}</Link>
-            <Link href="/devis" className="hover:text-white/70 transition-colors">Devis gratuit</Link>
+            <Link href="/devis" className="hover:text-white/70 transition-colors">{t("links.quote")}</Link>
             <a href={SITE.oaUrl} target="_blank" rel="noopener noreferrer" className="hover:text-white/70 transition-colors">
               OA #1 France
             </a>

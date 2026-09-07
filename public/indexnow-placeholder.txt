@@ -1,0 +1,5 @@
+This file is a placeholder. To activate IndexNow:
+1. Go to https://www.bing.com/indexnow/getstarted to get your key
+2. Add INDEXNOW_KEY=<your-key> to Vercel environment variables
+3. Rename this file to <your-key>.txt (or add it as a new file)
+4. POST to /api/indexnow with header X-IndexNow-Secret: <your-cron-secret> to submit all URLs

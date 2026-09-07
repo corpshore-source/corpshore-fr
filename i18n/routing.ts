@@ -24,6 +24,7 @@ export const routing = defineRouting({
     "/contact": "/contact",
     "/mentions-legales": "/mentions-legales",
     "/devis": "/devis",
+    "/villes": "/villes",
   },
 });
 

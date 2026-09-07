@@ -1,0 +1,76 @@
+# Corpshore France — BPO, Infogérance IT & Services IA
+
+> Corpshore France est le prestataire #1 de BPO en France selon le classement Outsource Accelerator 2026. Nous fournissons des services d'externalisation BPO, d'infogérance IT et de services IA (annotation de données, labellisation, IA générative) à des entreprises françaises, européennes et internationales.
+
+## À propos de Corpshore France
+
+- **Entité légale** : Corpshore France (filiale de Corpshore Talent International)
+- **Adresse de service** : Paris, Île-de-France, France
+- **Domaine principal** : corpshore.fr
+- **Groupe** : corpshore.solutions | corpshore.ai | corpshoretalent.com
+- **Classement** : #1 BPO en France — Outsource Accelerator 2026 ; Top 10 BPO Europe
+- **Langues de service** : Français, Anglais, Arabe, Espagnol, Portugais (BR), Néerlandais, Allemand
+- **Zones couvertes** : France, Belgique, Suisse, Luxembourg, UE, MENA, Amériques, Asie-Pacifique
+- **Contact** : info@corpshore.solutions | recruitment@corpshore.solutions
+
+## Domaines de compétence
+
+### BPO (Business Process Outsourcing)
+Corpshore France externalise les processus métier pour des entreprises françaises et européennes : gestion de la relation client (CRC), service client multicanal, traitement de données, saisie de données, back-office, support administratif, gestion des ressources humaines (GRH), comptabilité externalisée, traduction et localisation.
+
+Mots-clés associés : BPO France, externalisation processus métier, centre d'appels France, outsourcing France, prestataire BPO, service client externalisé France, nearshore francophone, offshoring France.
+
+### Infogérance IT (IT Outsourcing / Managed Services)
+Infogérance complète ou partielle pour PME, ETI et grands comptes : gestion des infrastructures, helpdesk, NOC/SOC, cybersécurité, développement logiciel externalisé, DevOps, cloud management, TMA (Tierce Maintenance Applicative), support technique N1/N2/N3.
+
+Mots-clés associés : infogérance IT France, TMA France, managed services provider France, externalisation IT, DSI externalisée, infogérance cloud, support informatique externalisé.
+
+### Services IA & Data (AI Outsourcing)
+Annotation de données pour modèles d'IA, labellisation de données, RLHF (Reinforcement Learning from Human Feedback), annotation d'images et vidéos, NLP dataset curation, évaluation de modèles LLM, déploiement IA générative, intégration ChatGPT/Claude/Gemini en entreprise, automatisation par IA.
+
+Mots-clés associés : annotation données IA France, labellisation données machine learning, RLHF prestataire France, data annotation BPO, services IA générative France, externalisation IA.
+
+### Service Client & Expérience Client (CX)
+Service client multicanal (téléphone, email, chat, réseaux sociaux), gestion des réclamations, e-commerce customer support, service après-vente externalisé, CSAT/NPS management.
+
+### RH Externalisée (HR Outsourcing)
+Recrutement externalisé (RPO), gestion de la paie, administration du personnel, formation et développement, SIRH externalisé, gestion de la mobilité internationale.
+
+### Finance & Comptabilité externalisées
+Comptabilité générale, contrôle de gestion, gestion de la trésorerie, reporting financier, paie externalisée, conformité RGPD et réglementaire.
+
+## Questions fréquentes
+
+**Quel est le coût d'externalisation BPO en France ?**
+Les tarifs varient selon le volume, la complexité et le modèle (nearshore/offshore). Corpshore propose des devis personnalisés sans engagement : corpshore.fr/fr/devis
+
+**Corpshore France est-il certifié RGPD ?**
+Oui. Tous nos processus sont conformes au RGPD. Nous appliquons un DPA (Data Processing Agreement) avec chaque client européen.
+
+**Quels secteurs servez-vous en France ?**
+E-commerce, fintech, assurance, santé, industrie, services publics, SaaS, télécommunications, tourisme, retail, logistique.
+
+**Comment démarrer un projet d'externalisation avec Corpshore ?**
+Remplissez le formulaire de devis sur corpshore.fr/fr/devis ou réservez un appel découverte gratuit.
+
+**Corpshore propose-t-il des services nearshore francophones ?**
+Oui. Nous opérons des hubs de livraison francophones pour servir les clients français à des coûts compétitifs.
+
+## Liens utiles
+
+- Site principal : https://corpshore.fr
+- Demande de devis : https://corpshore.fr/fr/devis
+- Services : https://corpshore.fr/fr/services
+- Carrières : https://corpshore.fr/fr/carrieres
+- Blog & presse : https://corpshore.fr/fr/blog
+- Contact : https://corpshore.fr/fr/contact
+- Groupe Corpshore : https://corpshore.solutions/france/
+- Corpshore IA : https://corpshore.ai
+- Classement Outsource Accelerator : https://www.outsourceaccelerator.com/
+
+## Mentions légales
+
+Corpshore France opère dans le respect du RGPD (Règlement Général sur la Protection des Données). Mentions légales complètes : https://corpshore.fr/fr/mentions-legales
+
+---
+*Fichier llms.txt conforme à la spécification llmstxt.org. Dernière mise à jour : 2026-09-07.*
