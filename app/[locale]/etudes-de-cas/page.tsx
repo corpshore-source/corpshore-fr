@@ -20,7 +20,12 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
     description,
     keywords: KEYWORDS.cases[locale as "fr" | "en"],
     alternates: pageAlternates("/etudes-de-cas"),
-    openGraph: { title, description, url: `${SITE.url}/${locale}/etudes-de-cas` },
+    openGraph: {
+      title,
+      description,
+      url: `${SITE.url}/${locale}/etudes-de-cas`,
+      images: [{ url: `${SITE.url}/images/paris-la-defense-business.webp`, width: 1200, height: 630 }],
+    },
   };
 }
 

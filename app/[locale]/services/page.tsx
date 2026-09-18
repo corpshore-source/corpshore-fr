@@ -23,7 +23,12 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
     description,
     keywords: KEYWORDS.services[locale as "fr" | "en"],
     alternates: pageAlternates("/services"),
-    openGraph: { title, description, url: `${SITE.url}/${locale}/services` },
+    openGraph: {
+      title,
+      description,
+      url: `${SITE.url}/${locale}/services`,
+      images: [{ url: `${SITE.url}/images/ai-annotation-equipe.webp`, width: 1200, height: 630 }],
+    },
   };
 }
 

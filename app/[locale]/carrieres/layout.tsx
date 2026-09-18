@@ -13,7 +13,12 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
     description,
     keywords: KEYWORDS.careers[locale as "fr" | "en"],
     alternates: pageAlternates("/carrieres"),
-    openGraph: { title, description, url: `${SITE.url}/${locale}/carrieres` },
+    openGraph: {
+      title,
+      description,
+      url: `${SITE.url}/${locale}/carrieres`,
+      images: [{ url: `${SITE.url}/images/recrutement-teletravail-france.webp`, width: 1200, height: 630 }],
+    },
   };
 }
 

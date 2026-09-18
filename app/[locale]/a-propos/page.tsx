@@ -21,7 +21,12 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
     description,
     keywords: KEYWORDS.about[locale as "fr" | "en"],
     alternates: pageAlternates("/a-propos"),
-    openGraph: { title, description, url: `${SITE.url}/${locale}/a-propos` },
+    openGraph: {
+      title,
+      description,
+      url: `${SITE.url}/${locale}/a-propos`,
+      images: [{ url: `${SITE.url}/images/equipe-teletravail-francophonie.webp`, width: 1200, height: 630 }],
+    },
   };
 }
 

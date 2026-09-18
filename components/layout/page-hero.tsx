@@ -19,14 +19,17 @@ export function PageHero({ label, heading, sub, children, className, tone = "mar
   return (
     <section className={cn(bg, "relative text-white pt-28 pb-16 md:pt-32 md:pb-20 overflow-hidden", className)}>
       {image && (
-        <Image
-          src={image}
-          alt=""
-          fill
-          className="object-cover opacity-20 mix-blend-luminosity"
-          priority
-          aria-hidden="true"
-        />
+        <>
+          <Image
+            src={image}
+            alt=""
+            fill
+            className="object-cover opacity-30"
+            priority
+            aria-hidden="true"
+          />
+          <div className="absolute inset-0 bg-gradient-to-br from-[var(--color-marine-900)]/60 via-transparent to-[var(--color-marine-800)]/40 pointer-events-none" aria-hidden="true" />
+        </>
       )}
       <div className="relative z-10">
         <Container>

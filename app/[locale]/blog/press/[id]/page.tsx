@@ -31,7 +31,13 @@ export async function generateMetadata({
   return {
     title,
     description,
-    openGraph: { title, description, type: "article", publishedTime: pr.date },
+    openGraph: {
+      title,
+      description,
+      type: "article",
+      publishedTime: pr.date,
+      images: [{ url: `${SITE.url}/images/paris-la-defense-business.webp`, width: 1200, height: 630 }],
+    },
     alternates: {
       canonical: `${SITE.url}/${locale}/blog/press/${id}`,
       languages: {

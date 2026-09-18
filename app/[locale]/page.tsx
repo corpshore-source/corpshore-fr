@@ -60,7 +60,12 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
       canonical: locale === "en" ? "https://corpshore.fr/en" : "https://corpshore.fr/fr",
       languages: CROSS_DOMAIN_HREFLANG,
     },
-    openGraph: { title, description, url: `${SITE.url}/${locale}` },
+    openGraph: {
+      title,
+      description,
+      url: `${SITE.url}/${locale}`,
+      images: [{ url: `${SITE.url}/images/hero-paris-operations.webp`, width: 1200, height: 630 }],
+    },
   };
 }
 

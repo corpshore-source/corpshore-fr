@@ -13,7 +13,12 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
     description,
     keywords: KEYWORDS.contact[locale as "fr" | "en"],
     alternates: pageAlternates("/contact"),
-    openGraph: { title, description, url: `${SITE.url}/${locale}/contact` },
+    openGraph: {
+      title,
+      description,
+      url: `${SITE.url}/${locale}/contact`,
+      images: [{ url: `${SITE.url}/images/hero-paris-operations.webp`, width: 1200, height: 630 }],
+    },
   };
 }
 

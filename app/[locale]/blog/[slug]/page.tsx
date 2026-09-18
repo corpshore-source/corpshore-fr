@@ -38,6 +38,7 @@ export async function generateMetadata({
       type: "article",
       publishedTime: post.date,
       url: `${SITE.url}/${locale}/blog/${slug}`,
+      images: [{ url: `${SITE.url}/images/${post.image}`, width: 1200, height: 630, alt: title }],
     },
     alternates: {
       canonical: `${SITE.url}/${locale}/blog/${slug}`,
