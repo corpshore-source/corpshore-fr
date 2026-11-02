@@ -3,6 +3,7 @@ export const SITE = {
   name: "Corpshore France",
   tagline: "#1 BPO en France",
   email: "info@corpshore.solutions",
+  emailRecruit: "recruitment@corpshore.solutions",
   emailDpo: "info@corpshore.solutions",
   phone: undefined,
   hq: "Toronto, Ontario, Canada",

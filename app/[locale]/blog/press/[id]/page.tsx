@@ -36,7 +36,7 @@ export async function generateMetadata({
       description,
       type: "article",
       publishedTime: pr.date,
-      images: [{ url: `${SITE.url}/images/paris-la-defense-business.webp`, width: 1200, height: 630 }],
+      images: [{ url: `${SITE.url}/images/badge-oa-france-2026.webp`, width: 1200, height: 630 }],
     },
     alternates: {
       canonical: `${SITE.url}/${locale}/blog/press/${id}`,

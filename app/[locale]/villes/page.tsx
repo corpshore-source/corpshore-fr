@@ -37,7 +37,7 @@ export async function generateMetadata({
       title,
       description,
       url: `${SITE.url}/${locale}/villes`,
-      images: [{ url: `${SITE.url}/images/hero-paris-operations.webp`, width: 1200, height: 630 }],
+      images: [{ url: `${SITE.url}/images/cf-offshore-nearshore-onshore-map.png`, width: 1200, height: 630 }],
     },
   };
 }
@@ -181,7 +181,7 @@ export default async function VillesPage({
         sub={isFr
           ? "Corpshore accompagne les entreprises de toutes les métropoles françaises — du service client e-commerce parisien à l'annotation de données MedTech montpelliéraine."
           : "Corpshore supports companies in all French metropolitan areas — from Parisian e-commerce customer service to Montpellier MedTech data annotation."}
-        image="/images/hero-paris-operations.webp"
+        image="/images/cf-offshore-nearshore-onshore-map.png"
       />
 
       <Section tone="default">

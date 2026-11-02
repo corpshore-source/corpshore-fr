@@ -17,7 +17,7 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
       title,
       description,
       url: `${SITE.url}/${locale}/contact`,
-      images: [{ url: `${SITE.url}/images/hero-paris-operations.webp`, width: 1200, height: 630 }],
+      images: [{ url: `${SITE.url}/images/agent-support-francophone.webp`, width: 1200, height: 630 }],
     },
   };
 }

@@ -27,7 +27,7 @@ export async function generateMetadata({
       url: `${SITE.url}/${locale}/devis`,
       images: [
         {
-          url: `${SITE.url}/images/hero-paris-operations.webp`,
+          url: `${SITE.url}/images/cf-finance-accounting.png`,
           width: 1200,
           height: 630,
           alt: isFr ? "Demande de devis — Corpshore France" : "Request a proposal — Corpshore France",

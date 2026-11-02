@@ -1,6 +1,9 @@
 "use client";
 import { useState } from "react";
+import Script from "next/script";
 import { useLocale } from "next-intl";
+
+const TURNSTILE_SITE_KEY = "0x4AAAAAAEFhVlYr9OXOOWyC";
 
 export function NewsletterSignup({ dark = false }: { dark?: boolean }) {
   const locale = useLocale();
@@ -9,17 +12,26 @@ export function NewsletterSignup({ dark = false }: { dark?: boolean }) {
   const [rgpd, setRgpd] = useState(false);
   const [status, setStatus] = useState<"idle" | "sending" | "ok" | "err">("idle");
 
-  async function submit(e: React.FormEvent) {
+  async function submit(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault();
     if (!rgpd) return;
     setStatus("sending");
+    const form = e.currentTarget;
+    const tsToken = (form.elements.namedItem("cf-turnstile-response") as HTMLInputElement)?.value ?? "";
     try {
       const res = await fetch("/api/newsletter", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ email, rgpd }),
+        body: JSON.stringify({ email, rgpd, "cf-turnstile-response": tsToken }),
       });
-      setStatus(res.ok ? "ok" : "err");
+      if (res.ok) {
+        setStatus("ok");
+      } else {
+        setStatus("err");
+      }
+      if (typeof window !== "undefined" && (window as { turnstile?: { reset: () => void } }).turnstile) {
+        (window as { turnstile?: { reset: () => void } }).turnstile?.reset();
+      }
     } catch {
       setStatus("err");
     }
@@ -37,6 +49,8 @@ export function NewsletterSignup({ dark = false }: { dark?: boolean }) {
   }
 
   return (
+    <>
+    <Script src="https://challenges.cloudflare.com/turnstile/v0/api.js" strategy="lazyOnload" />
     <form onSubmit={submit} className="space-y-3">
       <p className={`text-xs font-semibold uppercase tracking-widest ${dark ? "text-white" : "text-[var(--color-encre)]"} mb-3`}>
         {isFr ? "Newsletter" : "Newsletter"}
@@ -76,11 +90,18 @@ export function NewsletterSignup({ dark = false }: { dark?: boolean }) {
             : "I agree to receive the Corpshore newsletter and confirm I have read the privacy policy."}
         </label>
       </div>
+      <div
+        className="cf-turnstile"
+        data-sitekey={TURNSTILE_SITE_KEY}
+        data-theme={dark ? "dark" : "light"}
+        data-size="compact"
+      />
       {status === "err" && (
         <p className="text-xs text-red-400">
           {isFr ? "Erreur. Veuillez réessayer." : "Error. Please try again."}
         </p>
       )}
     </form>
+    </>
   );
 }

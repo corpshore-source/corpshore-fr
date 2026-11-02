@@ -119,12 +119,21 @@ export async function POST(req: NextRequest) {
     lettre: get("lettre"),
   };
 
+  const ALLOWED_CV_TYPES = ["application/pdf", "application/msword", "application/vnd.openxmlformats-officedocument.wordprocessingml.document"];
+  const CV_MAX_BYTES = 5 * 1024 * 1024; // 5 MB
+
   try {
     const accessToken = await getZohoAccessToken();
     if (accessToken) {
       const candidateId = await createRecruitCandidate(accessToken, fields);
       const cvFile = formData.get("cv");
-      if (candidateId && cvFile instanceof File && cvFile.size > 0) {
+      if (
+        candidateId &&
+        cvFile instanceof File &&
+        cvFile.size > 0 &&
+        cvFile.size <= CV_MAX_BYTES &&
+        ALLOWED_CV_TYPES.includes(cvFile.type)
+      ) {
         await uploadCvToRecruit(accessToken, candidateId, cvFile);
       }
     }

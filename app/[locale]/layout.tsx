@@ -55,6 +55,14 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
       siteName: t("siteName"),
       locale: ogLocale,
       type: "website",
+      images: [
+        {
+          url: `${SITE.url}/images/hero-paris-operations.webp`,
+          width: 1200,
+          height: 630,
+          alt: locale === "fr" ? "Corpshore France — #1 BPO en France" : "Corpshore France — #1 BPO in France",
+        },
+      ],
     },
     twitter: {
       card: "summary_large_image",
@@ -87,22 +95,55 @@ export default async function LocaleLayout({
     "@context": "https://schema.org",
     "@graph": [
       {
-        "@type": "Organization",
+        "@type": ["Organization", "ProfessionalService"],
         "@id": `${SITE.url}/#organization`,
         name: "Corpshore France",
         url: SITE.url,
-        contactPoint: {
-          "@type": "ContactPoint",
-          email: SITE.email,
-          contactType: "customer service",
-          areaServed: "FR",
-          availableLanguage: ["French", "English"],
+        logo: { "@type": "ImageObject", url: `${SITE.url}/images/logo.png` },
+        contactPoint: [
+          {
+            "@type": "ContactPoint",
+            email: SITE.email,
+            contactType: "customer service",
+            areaServed: "FR",
+            availableLanguage: ["French", "English"],
+          },
+          {
+            "@type": "ContactPoint",
+            email: (SITE as { emailRecruit?: string }).emailRecruit ?? SITE.email,
+            contactType: "human resources",
+            areaServed: "FR",
+            availableLanguage: ["French", "English"],
+          },
+        ],
+        address: {
+          "@type": "PostalAddress",
+          addressLocality: "Paris",
+          addressRegion: "Île-de-France",
+          addressCountry: "FR",
         },
-        address: { "@type": "PostalAddress", addressCountry: "FR" },
-        sameAs: [SITE.social.linkedin, SITE.globalUrl],
+        areaServed: { "@type": "Country", name: "France" },
+        sameAs: [
+          SITE.social.linkedin,
+          SITE.globalUrl,
+          "https://corpshore.ai",
+          "https://corpshoretalent.com",
+          SITE.oaUrl,
+          SITE.oaEuropeUrl,
+        ],
         description:
-          "Corpshore France, #1 BPO en France. Externalisation BPO, infogérance IT et IA générative pour les entreprises françaises et francophones.",
-        knowsAbout: ["Business Process Outsourcing", "IT Outsourcing", "Artificial Intelligence", "Managed Services"],
+          "Corpshore France, #1 BPO en France par Outsource Accelerator. Externalisation BPO, infogérance IT et IA générative pour les entreprises françaises et francophones. 18 pays, 35 langues.",
+        knowsAbout: [
+          "Business Process Outsourcing",
+          "IT Outsourcing",
+          "Artificial Intelligence",
+          "Managed Services",
+          "Data Annotation",
+          "HR Outsourcing",
+          "Finance Outsourcing",
+          "Customer Service Outsourcing",
+        ],
+        foundingDate: "2014",
       },
       {
         "@type": "WebSite",
@@ -111,6 +152,11 @@ export default async function LocaleLayout({
         name: "Corpshore France",
         inLanguage: ["fr-FR", "en"],
         publisher: { "@id": `${SITE.url}/#organization` },
+        potentialAction: {
+          "@type": "SearchAction",
+          target: { "@type": "EntryPoint", urlTemplate: `${SITE.url}/fr/blog?q={search_term_string}` },
+          "query-input": "required name=search_term_string",
+        },
       },
       {
         "@type": "WebPage",

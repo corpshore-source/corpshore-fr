@@ -176,8 +176,8 @@ export default function ContactPage() {
                       </div>
                     </div>
                     <div className="mb-4">
-                      <label className="block text-sm font-medium mb-1.5">{t("form.message")} *</label>
-                      <textarea name="message" required rows={5} className="w-full px-3 py-2 text-sm border border-[var(--color-border)] rounded-[var(--radius)] focus:outline-none focus:ring-2 focus:ring-[var(--color-marine-800)] resize-y" />
+                      <label htmlFor="contact-message" className="block text-sm font-medium mb-1.5">{t("form.message")} *</label>
+                      <textarea id="contact-message" name="message" required rows={5} className="w-full px-3 py-2 text-sm border border-[var(--color-border)] rounded-[var(--radius)] focus:outline-none focus:ring-2 focus:ring-[var(--color-marine-800)] resize-y" />
                     </div>
                     <div className="mb-5 flex gap-2.5 items-start">
                       <input type="checkbox" id="rgpd-contact" name="rgpd" required className="mt-0.5 h-4 w-4 accent-[var(--color-marine-800)]" />
@@ -236,16 +236,16 @@ export default function ContactPage() {
                   {isFr ? (
                     <>
                       Pour les candidatures, rendez-vous sur notre page{" "}
-                      <a href="/fr/carrieres" className="font-semibold text-[var(--color-marine-800)] underline">Carrières</a>{" "}
+                      <a href={`/${locale}/carrieres`} className="font-semibold text-[var(--color-marine-800)] underline">Carrières</a>{" "}
                       ou écrivez à{" "}
-                      <a href={`mailto:${SITE.email}`} className="font-semibold text-[var(--color-marine-800)] underline">{SITE.email}</a>.
+                      <a href={`mailto:${(SITE as { emailRecruit?: string }).emailRecruit ?? SITE.email}`} className="font-semibold text-[var(--color-marine-800)] underline">{(SITE as { emailRecruit?: string }).emailRecruit ?? SITE.email}</a>.
                     </>
                   ) : (
                     <>
                       For applications, visit our{" "}
-                      <a href="/en/carrieres" className="font-semibold text-[var(--color-marine-800)] underline">Careers page</a>{" "}
+                      <a href={`/${locale}/carrieres`} className="font-semibold text-[var(--color-marine-800)] underline">Careers page</a>{" "}
                       or email{" "}
-                      <a href={`mailto:${SITE.email}`} className="font-semibold text-[var(--color-marine-800)] underline">{SITE.email}</a>.
+                      <a href={`mailto:${(SITE as { emailRecruit?: string }).emailRecruit ?? SITE.email}`} className="font-semibold text-[var(--color-marine-800)] underline">{(SITE as { emailRecruit?: string }).emailRecruit ?? SITE.email}</a>.
                     </>
                   )}
                 </p>

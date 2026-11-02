@@ -154,8 +154,21 @@ export async function POST(req: NextRequest) {
     description: get("description"),
   };
 
+  const ALLOWED_DEVIS_TYPES = [
+    "image/png", "image/jpeg", "image/jpg",
+    "application/pdf",
+    "application/msword",
+    "application/vnd.openxmlformats-officedocument.wordprocessingml.document",
+    "application/vnd.ms-powerpoint",
+    "application/vnd.openxmlformats-officedocument.presentationml.presentation",
+    "text/csv",
+    "application/vnd.ms-excel",
+    "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
+  ];
   const files = formData.getAll("files") as File[];
-  const validFiles = files.filter((f) => f instanceof File && f.size > 0 && f.size < 10 * 1024 * 1024);
+  const validFiles = files
+    .filter((f) => f instanceof File && f.size > 0 && f.size < 10 * 1024 * 1024 && ALLOWED_DEVIS_TYPES.includes(f.type))
+    .slice(0, 5);
 
   try {
     const accessToken = await getZohoAccessToken();

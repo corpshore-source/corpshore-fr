@@ -240,7 +240,8 @@ export default function CarriersPage() {
               <div className="mb-5 flex gap-2.5 items-start">
                 <input type="checkbox" id="rgpd-careers" name="rgpd" required className="mt-0.5 h-4 w-4 accent-[var(--color-marine-800)]" />
                 <label htmlFor="rgpd-careers" className="text-xs text-[var(--color-granit)] leading-relaxed">
-                  {t("form.rgpd")} *
+                  {t("form.rgpd")} *{" "}
+                  <a href="/mentions-legales#rgpd" className="underline text-[var(--color-marine-800)]">RGPD</a>
                 </label>
               </div>
               <div className="cf-turnstile mb-5" data-sitekey={TURNSTILE_SITE_KEY} />

@@ -21,7 +21,12 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
     description,
     keywords: KEYWORDS.blog[locale as "fr" | "en"],
     alternates: pageAlternates("/blog"),
-    openGraph: { title, description, url: `${SITE.url}/${locale}/blog` },
+    openGraph: {
+      title,
+      description,
+      url: `${SITE.url}/${locale}/blog`,
+      images: [{ url: `${SITE.url}/images/histoire-lumieres-tech.webp`, width: 1200, height: 630 }],
+    },
   };
 }
 

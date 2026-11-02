@@ -1,5 +1,22 @@
 import { NextRequest, NextResponse } from "next/server";
 
+async function verifyTurnstile(token: string): Promise<boolean> {
+  const secret = process.env.TURNSTILE_SECRET_KEY;
+  if (!secret) {
+    const production = process.env.VERCEL_ENV
+      ? process.env.VERCEL_ENV === "production"
+      : process.env.NODE_ENV === "production";
+    return !production;
+  }
+  const res = await fetch("https://challenges.cloudflare.com/turnstile/v0/siteverify", {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify({ secret, response: token }),
+  });
+  const data = await res.json();
+  return data.success === true;
+}
+
 async function getZohoAccessToken(): Promise<string | null> {
   const { ZOHO_CLIENT_ID, ZOHO_CLIENT_SECRET, ZOHO_REFRESH_TOKEN } = process.env;
   if (!ZOHO_CLIENT_ID || !ZOHO_CLIENT_SECRET || !ZOHO_REFRESH_TOKEN) return null;
@@ -18,11 +35,17 @@ async function getZohoAccessToken(): Promise<string | null> {
 }
 
 export async function POST(req: NextRequest) {
-  let body: { email?: string; rgpd?: boolean };
+  let body: { email?: string; rgpd?: boolean; "cf-turnstile-response"?: string };
   try {
     body = await req.json();
   } catch {
     return NextResponse.json({ error: "Invalid request" }, { status: 400 });
+  }
+
+  const token = body["cf-turnstile-response"] ?? "";
+  const tsOk = await verifyTurnstile(token);
+  if (!tsOk) {
+    return NextResponse.json({ error: "Security check failed. Please try again." }, { status: 400 });
   }
 
   const email = (body.email ?? "").trim().toLowerCase();
@@ -49,7 +72,7 @@ export async function POST(req: NextRequest) {
       }
     }
   } catch {
-    // Non-fatal — still acknowledge subscription
+    // Non-fatal
   }
 
   return NextResponse.json({ ok: true });
